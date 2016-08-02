@@ -6,7 +6,8 @@ that tracks all available versions of
 [iojs](/iojs/versions),
 [npm](/npm/versions),
 [nginx](/nginx/versions),
-and [mongodb](/mongodb/versions).
+[mongodb](/mongodb/versions),
+and [PHP](/php/versions).
 It uses that version info to resolve
 [semver range queries](https://npmjs.org/doc/misc/semver.html#Ranges).
 It's used by Heroku's
@@ -54,6 +55,7 @@ with the whole kit and caboodle:
 - [semver.io/npm.json](https://semver.io/npm.json)
 - [semver.io/nginx.json](https://semver.io/nginx.json)
 - [semver.io/mongodb.json](https://semver.io/mongodb.json)
+- [semver.io/php.json](https://semver.io/php.json)
 
 The response is something like:
 
