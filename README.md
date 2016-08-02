@@ -50,12 +50,12 @@ curl https://semver.io/nginx/stable
 There are CORS-friendly HTTP endpoints for each source
 with the whole kit and caboodle:
 
-- [semver.io/node.json](https://semver.io/node.json)
-- [semver.io/iojs.json](https://semver.io/iojs.json)
-- [semver.io/npm.json](https://semver.io/npm.json)
-- [semver.io/nginx.json](https://semver.io/nginx.json)
-- [semver.io/mongodb.json](https://semver.io/mongodb.json)
-- [semver.io/php.json](https://semver.io/php.json)
+- [semver.io/node.json](/node.json)
+- [semver.io/iojs.json](/iojs.json)
+- [semver.io/npm.json](/npm.json)
+- [semver.io/nginx.json](/nginx.json)
+- [semver.io/mongodb.json](/mongodb.json)
+- [semver.io/php.json](/php.json)
 
 The response is something like:
 
@@ -76,18 +76,18 @@ The response is something like:
 semver.io supports any range that [node-semver](https://github.com/isaacs/node-semver) can parse.
 For example:
 
-- [/node/resolve/0.10.x](https://semver.io/node/resolve/0.10.x)
-- [/node/resolve/0.11.x](https://semver.io/node/resolve/>=0.11.5)
-- [/node/resolve/~0.10.15](https://semver.io/node/resolve/~0.10.15)
-- [/node/resolve/>0.4](https://semver.io/node/resolve/>0.4)
-- [/node/resolve/>=0.8.5 <=0.8.14](https://semver.io/node/resolve/>=0.8.5 <=0.8.14)
+- [/node/resolve/0.10.x](/node/resolve/0.10.x)
+- [/node/resolve/0.11.x](/node/resolve/>=0.11.5)
+- [/node/resolve/~0.10.15](/node/resolve/~0.10.15)
+- [/node/resolve/>0.4](/node/resolve/>0.4)
+- [/node/resolve/>=0.8.5 <=0.8.14](/node/resolve/>=0.8.5 <=0.8.14)
 
 These named routes are also provided for convenience (for each source):
 
-- [/node/stable](https://semver.io/node/stable)
-- [/nginx/unstable](https://semver.io/nginx/unstable)
-- [/node/versions](https://semver.io/node/versions)
-- [/mongodb/stable](https://semver.io/mongodb/stable)
+- [/node/stable](/node/stable)
+- [/nginx/unstable](/nginx/unstable)
+- [/node/versions](/node/versions)
+- [/mongodb/stable](/mongodb/stable)
 
 ## Links
 
