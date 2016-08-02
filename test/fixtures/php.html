@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: PHP 7 ChangeLog</title>
+
+ <link rel="shortcut icon" href="https://php.net/favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="https://php.net/releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="https://php.net/feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="http://php.net/ChangeLog-7.php">
+ <link rel="shorturl" href="http://php.net/ChangeLog-7">
+ <link rel="alternate" href="http://php.net/ChangeLog-7" hreflang="x-default">
+
+
+
+<link rel="stylesheet" type="text/css" href="https://php.net/cached.php?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="https://php.net/cached.php?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="https://php.net/cached.php?t=1469127006&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="https://php.net/cached.php?t=1449787206&amp;f=/styles/theme-medium.css" media="screen">
+<link rel="stylesheet" type="text/css" href="https://php.net/cached.php?t=1421837618&amp;f=/styles/changelog.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="https://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="https://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="https://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base href="https://php.net/ChangeLog-7.php">
+
+</head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="/" class="brand"><img src="/images/logo.php" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="/downloads">Downloads</a></li>
+      <li class="active"><a href="/docs.php">Documentation</a></li>
+      <li class=""><a href="/get-involved" >Get Involved</a></li>
+      <li class=""><a href="/support">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href='/manual/en/getting-started.php'>Getting Started</a></dt>
+	<dd><a href='/manual/en/introduction.php'>Introduction</a></dd>
+	<dd><a href='/manual/en/tutorial.php'>A simple tutorial</a></dd>
+<dt><a href='/manual/en/langref.php'>Language Reference</a></dt>
+	<dd><a href='/manual/en/language.basic-syntax.php'>Basic syntax</a></dd>
+	<dd><a href='/manual/en/language.types.php'>Types</a></dd>
+	<dd><a href='/manual/en/language.variables.php'>Variables</a></dd>
+	<dd><a href='/manual/en/language.constants.php'>Constants</a></dd>
+	<dd><a href='/manual/en/language.expressions.php'>Expressions</a></dd>
+	<dd><a href='/manual/en/language.operators.php'>Operators</a></dd>
+	<dd><a href='/manual/en/language.control-structures.php'>Control Structures</a></dd>
+	<dd><a href='/manual/en/language.functions.php'>Functions</a></dd>
+	<dd><a href='/manual/en/language.oop5.php'>Classes and Objects</a></dd>
+	<dd><a href='/manual/en/language.namespaces.php'>Namespaces</a></dd>
+	<dd><a href='/manual/en/language.errors.php'>Errors</a></dd>
+	<dd><a href='/manual/en/language.exceptions.php'>Exceptions</a></dd>
+	<dd><a href='/manual/en/language.generators.php'>Generators</a></dd>
+	<dd><a href='/manual/en/language.references.php'>References Explained</a></dd>
+	<dd><a href='/manual/en/reserved.variables.php'>Predefined Variables</a></dd>
+	<dd><a href='/manual/en/reserved.exceptions.php'>Predefined Exceptions</a></dd>
+	<dd><a href='/manual/en/reserved.interfaces.php'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='/manual/en/context.php'>Context options and parameters</a></dd>
+	<dd><a href='/manual/en/wrappers.php'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='/manual/en/security.php'>Security</a></dt>
+	<dd><a href='/manual/en/security.intro.php'>Introduction</a></dd>
+	<dd><a href='/manual/en/security.general.php'>General considerations</a></dd>
+	<dd><a href='/manual/en/security.cgi-bin.php'>Installed as CGI binary</a></dd>
+	<dd><a href='/manual/en/security.apache.php'>Installed as an Apache module</a></dd>
+	<dd><a href='/manual/en/security.filesystem.php'>Filesystem Security</a></dd>
+	<dd><a href='/manual/en/security.database.php'>Database Security</a></dd>
+	<dd><a href='/manual/en/security.errors.php'>Error Reporting</a></dd>
+	<dd><a href='/manual/en/security.globals.php'>Using Register Globals</a></dd>
+	<dd><a href='/manual/en/security.variables.php'>User Submitted Data</a></dd>
+	<dd><a href='/manual/en/security.magicquotes.php'>Magic Quotes</a></dd>
+	<dd><a href='/manual/en/security.hiding.php'>Hiding PHP</a></dd>
+	<dd><a href='/manual/en/security.current.php'>Keeping Current</a></dd>
+<dt><a href='/manual/en/features.php'>Features</a></dt>
+	<dd><a href='/manual/en/features.http-auth.php'>HTTP authentication with PHP</a></dd>
+	<dd><a href='/manual/en/features.cookies.php'>Cookies</a></dd>
+	<dd><a href='/manual/en/features.sessions.php'>Sessions</a></dd>
+	<dd><a href='/manual/en/features.xforms.php'>Dealing with XForms</a></dd>
+	<dd><a href='/manual/en/features.file-upload.php'>Handling file uploads</a></dd>
+	<dd><a href='/manual/en/features.remote-files.php'>Using remote files</a></dd>
+	<dd><a href='/manual/en/features.connection-handling.php'>Connection handling</a></dd>
+	<dd><a href='/manual/en/features.persistent-connections.php'>Persistent Database Connections</a></dd>
+	<dd><a href='/manual/en/features.safe-mode.php'>Safe Mode</a></dd>
+	<dd><a href='/manual/en/features.commandline.php'>Command line usage</a></dd>
+	<dd><a href='/manual/en/features.gc.php'>Garbage Collection</a></dd>
+	<dd><a href='/manual/en/features.dtrace.php'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='/manual/en/funcref.php'>Function Reference</a></dt>
+	<dd><a href='/manual/en/refs.basic.php.php'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='/manual/en/refs.utilspec.audio.php'>Audio Formats Manipulation</a></dd>
+	<dd><a href='/manual/en/refs.remote.auth.php'>Authentication Services</a></dd>
+	<dd><a href='/manual/en/refs.utilspec.cmdline.php'>Command Line Specific Extensions</a></dd>
+	<dd><a href='/manual/en/refs.compression.php'>Compression and Archive Extensions</a></dd>
+	<dd><a href='/manual/en/refs.creditcard.php'>Credit Card Processing</a></dd>
+	<dd><a href='/manual/en/refs.crypto.php'>Cryptography Extensions</a></dd>
+	<dd><a href='/manual/en/refs.database.php'>Database Extensions</a></dd>
+	<dd><a href='/manual/en/refs.calendar.php'>Date and Time Related Extensions</a></dd>
+	<dd><a href='/manual/en/refs.fileprocess.file.php'>File System Related Extensions</a></dd>
+	<dd><a href='/manual/en/refs.international.php'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='/manual/en/refs.utilspec.image.php'>Image Processing and Generation</a></dd>
+	<dd><a href='/manual/en/refs.remote.mail.php'>Mail Related Extensions</a></dd>
+	<dd><a href='/manual/en/refs.math.php'>Mathematical Extensions</a></dd>
+	<dd><a href='/manual/en/refs.utilspec.nontext.php'>Non-Text MIME Output</a></dd>
+	<dd><a href='/manual/en/refs.fileprocess.process.php'>Process Control Extensions</a></dd>
+	<dd><a href='/manual/en/refs.basic.other.php'>Other Basic Extensions</a></dd>
+	<dd><a href='/manual/en/refs.remote.other.php'>Other Services</a></dd>
+	<dd><a href='/manual/en/refs.search.php'>Search Engine Extensions</a></dd>
+	<dd><a href='/manual/en/refs.utilspec.server.php'>Server Specific Extensions</a></dd>
+	<dd><a href='/manual/en/refs.basic.session.php'>Session Extensions</a></dd>
+	<dd><a href='/manual/en/refs.basic.text.php'>Text Processing</a></dd>
+	<dd><a href='/manual/en/refs.basic.vartype.php'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='/manual/en/refs.webservice.php'>Web Services</a></dd>
+	<dd><a href='/manual/en/refs.utilspec.windows.php'>Windows Only Extensions</a></dd>
+	<dd><a href='/manual/en/refs.xml.php'>XML Manipulation</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+
+<h1>PHP 7 ChangeLog</h1>
+
+<section class="version" id="7.0.9"><!-- {{{ 7.0.9 -->
+<h3>Version 7.0.9</h3>
+<b><time class='releasedate' datetime='2016-07-21'>21 Jul 2016</time></b>
+<ul><li>Core:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72508">#72508</a> (strange references after recursive function call and "switch" statement).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72513">#72513</a> (Stack-based buffer overflow vulnerability in virtual_file_ex).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72573">#72573</a> (HTTP_PROXY is improperly trusted by some PHP libraries and applications).</li>
+</ul></li>
+<li>bz2:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72613">#72613</a> (Inadequate error handling in bzread()).</li>
+</ul></li>
+<li>CLI:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72484">#72484</a> (SCRIPT_FILENAME shows wrong path if the user specify router.php).</li>
+</ul></li>
+<li>COM:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72498">#72498</a> (variant_date_from_timestamp null dereference).</li>
+</ul></li>
+<li>Curl:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72541">#72541</a> (size_t overflow lead to heap corruption).</li>
+</ul></li>
+<li>Exif:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72603">#72603</a> (Out of bound read in exif_process_IFD_in_MAKERNOTE).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72618">#72618</a> (NULL Pointer Dereference in exif_process_user_comment).</li>
+</ul></li>
+<li>GD:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/43475">#43475</a> (Thick styled lines have scrambled patterns).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/53640">#53640</a> (XBM images require width to be multiple of 8).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/64641">#64641</a> (imagefilledpolygon doesn't draw horizontal line).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72512">#72512</a> (gdImageTrueColorToPaletteBody allows arbitrary write/read access).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72519">#72519</a> (imagegif/output out-of-bounds access).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72558">#72558</a> (Integer overflow error within _gdContributionsAlloc()).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72482">#72482</a> (Ilegal write/read access caused by gdImageAALine overflow).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72494">#72494</a> (imagecropauto out-of-bounds access).</li>
+</ul></li>
+<li>Intl:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72533">#72533</a> (locale_accept_from_http out-of-bounds access).</li>
+</ul></li>
+<li>Mbstring:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72405">#72405</a> (mb_ereg_replace - mbc_to_code (oniguruma) - oob read access).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72399">#72399</a> (Use-After-Free in MBString (search_re)).</li>
+</ul></li>
+<li>mcrypt:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72551">#72551</a>, bug <a href="http://bugs.php.net/72552">#72552</a> (Incorrect casting from size_t to int lead to heap overflow in mdecrypt_generic).</li>
+</ul></li>
+<li>PDO_pgsql:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72570">#72570</a> (Segmentation fault when binding parameters on a query without placeholders).</li>
+</ul></li>
+<li>PCRE:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72476">#72476</a> (Memleak in jit_stack).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72463">#72463</a> (mail fails with invalid argument).</li>
+</ul></li>
+<li>Readline:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72538">#72538</a> (readline_redisplay crashes php).</li>
+</ul></li>
+<li>Standard:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72505">#72505</a> (readfile() mangles files larger than 2G).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72306">#72306</a> (Heap overflow through proc_open and $env parameter).</li>
+</ul></li>
+<li>Session:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72531">#72531</a> (ps_files_cleanup_dir Buffer overflow).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72562">#72562</a> (Use After Free in unserialize() with Unexpected Session Deserialization).</li>
+</ul></li>
+<li>SNMP:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72479">#72479</a> (Use After Free Vulnerability in SNMP with GC and unserialize()).</li>
+</ul></li>
+<li>Streams:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72439">#72439</a> (Stream socket with remote address leads to a segmentation fault).</li>
+</ul></li>
+<li>XMLRPC:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72606">#72606</a> (heap-buffer-overflow (write) simplestring_addn simplestring.c).</li>
+</ul></li>
+<li>Zip:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72520">#72520</a> (Stack-based buffer overflow vulnerability in php_stream_zip_opener).</li>
+</ul></li>
+</ul>
+<!-- }}} --></section>
+
+<section class="version" id="7.0.8"><!-- {{{ 7.0.8 -->
+<h3>Version 7.0.8</h3>
+<b><time class='releasedate' datetime='2016-06-23'>23 Jun 2016</time></b>
+<ul><li>Core:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72218">#72218</a> (If host name cannot be resolved then PHP 7 crashes).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72221">#72221</a> (segfault, past-the-end access).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72268">#72268</a> (Integer Overflow in nl2br()).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72275">#72275</a> (Integer Overflow in json_encode()/json_decode()/ json_utf8_to_utf16()).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72400">#72400</a> (Integer Overflow in addcslashes/addslashes).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72403">#72403</a> (Integer Overflow in Length of String-typed ZVAL).</li>
+</ul></li>
+<li>Date:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/63740">#63740</a> (strtotime seems to use both sunday and monday as start of week).</li>
+</ul></li>
+<li>FPM:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72308">#72308</a> (fastcgi_finish_request and logging environment variables).</li>
+</ul></li>
+<li>GD:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/66387">#66387</a> (Stack overflow with imagefilltoborder). (CVE-2015-8874)</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72298">#72298</a> (pass2_no_dither out-of-bounds access).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72337">#72337</a> (invalid dimensions can lead to crash).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72339">#72339</a> (Integer Overflow in _gd2GetHeader() resulting in heap overflow). (CVE-2016-5766)</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72407">#72407</a> (NULL Pointer Dereference at _gdScaleVert).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72446">#72446</a> (Integer Overflow in gdImagePaletteToTrueColor() resulting in heap overflow). (CVE-2016-5767)</li>
+</ul></li>
+<li>Intl:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70484">#70484</a> (selectordinal doesn't work with named parameters).</li>
+</ul></li>
+<li>mbstring:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72402">#72402</a> (_php_mb_regex_ereg_replace_exec - double free). (CVE-2016-5768)</li>
+</ul></li>
+<li>mcrypt:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72455">#72455</a> (Heap Overflow due to integer overflows). (CVE-2016-5769)</li>
+</ul></li>
+<li>OpenSSL:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72140">#72140</a> (segfault after calling ERR_free_strings()).</li>
+</ul></li>
+<li>PCRE:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72143">#72143</a> (preg_replace uses int instead of size_t).</li>
+</ul></li>
+<li>PDO_pgsql:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71573">#71573</a> (Segfault (core dumped) if paramno beyond bound).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72294">#72294</a> (Segmentation fault/invalid pointer in connection with pgsql_stmt_dtor).</li>
+</ul></li>
+<li>Phar:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72321">#72321</a> (invalid free in phar_extract_file()).</li>
+</ul></li>
+<li>Phpdbg:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72284">#72284</a> (phpdbg fatal errors with coverage).</li>
+</ul></li>
+<li>Postgres:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72195">#72195</a> (pg_pconnect/pg_connect cause use-after-free).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72197">#72197</a> (pg_lo_create arbitrary read).</li>
+</ul></li>
+<li>Standard:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72017">#72017</a> (range() with float step produces unexpected result).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72193">#72193</a> (dns_get_record returns array containing elements of type 'unknown').</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72229">#72229</a> (Wrong reference when serialize/unserialize an object).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72300">#72300</a> (ignore_user_abort(false) has no effect).</li>
+</ul></li>
+<li>WDDX:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72340">#72340</a> (Double Free Courruption in wddx_deserialize). (CVE-2016-5772)</li>
+</ul></li>
+<li>XML:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72206">#72206</a> (xml_parser_create/xml_parser_free leaks mem).</li>
+</ul></li>
+<li>XMLRPC:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72155">#72155</a> (use-after-free caused by get_zval_xmlrpc_type).</li>
+</ul></li>
+<li>Zip:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72258">#72258</a> (ZipArchive converts filenames to unrecoverable form).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72434">#72434</a> (ZipArchive class Use After Free Vulnerability in PHP's GC algorithm and unserialize). (CVE-2016-5773)</li>
+</ul></li>
+</ul>
+<!-- }}} --></section>
+
+<section class="version" id="7.0.7"><!-- {{{ 7.0.7 -->
+<h3>Version 7.0.7</h3>
+<b><time class='releasedate' datetime='2016-05-26'>26 May 2016</time></b>
+<ul><li>Core:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72162">#72162</a> (use-after-free - error_reporting).</li>
+  <li>Add compiler option to disable special case function calls.</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72101">#72101</a> (crash on complex code).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72100">#72100</a> (implode() inserts garbage into resulting string when joins very big integer).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72057">#72057</a> (PHP Hangs when using custom error handler and typehint).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72038">#72038</a> (Function calls with values to a by-ref parameter don't always throw a notice).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71737">#71737</a> (Memory leak in closure with parameter named $this).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72059">#72059</a> (?? is not allowed on constant expressions).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72159">#72159</a> (Imported Class Overrides Local Class Name).</li>
+</ul></li>
+<li>Curl:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/68658">#68658</a> (Define CURLE_SSL_CACERT_BADFILE).</li>
+</ul></li>
+<li>DBA:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72157">#72157</a> (use-after-free caused by dba_open).</li>
+</ul></li>
+<li>GD:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72227">#72227</a> (imagescale out-of-bounds read). (CVE-2013-7456)</li>
+</ul></li>
+<li>Intl:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/64524">#64524</a> (Add intl.use_exceptions to php.ini-*).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72241">#72241</a> (get_icu_value_internal out-of-bounds read). (CVE-2016-5093)</li>
+</ul></li>
+<li>JSON:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72069">#72069</a> (Behavior \JsonSerializable different from json_encode).</li>
+</ul></li>
+<li>Mbstring:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72164">#72164</a> (Null Pointer Dereference - mb_ereg_replace).</li>
+</ul></li>
+<li>OCI8:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71600">#71600</a> (oci_fetch_all segfaults when selecting more than eight columns).</li>
+</ul></li>
+<li>Opcache:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72014">#72014</a> (Including a file with anonymous classes multiple times leads to fatal error).</li>
+</ul></li>
+<li>OpenSSL:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72165">#72165</a> (Null pointer dereference - openssl_csr_new).</li>
+</ul></li>
+<li>PCNTL:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72154">#72154</a> (pcntl_wait/pcntl_waitpid array internal structure overwrite).</li>
+</ul></li>
+<li>POSIX:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72133">#72133</a> (php_posix_group_to_array crashes if gr_passwd is NULL).</li>
+</ul></li>
+<li>Postgres:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72028">#72028</a> (pg_query_params(): NULL converts to empty string).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71062">#71062</a> (pg_convert() doesn't accept ISO 8601 for datatype timestamp).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72151">#72151</a> (mysqli_fetch_object changed behaviour). Patch to <a href="http://bugs.php.net/71820">#71820</a> is reverted.</li>
+</ul></li>
+<li>Reflection:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72174">#72174</a> (ReflectionProperty#getValue() causes __isset call).</li>
+</ul></li>
+<li>Session:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71972">#71972</a> (Cyclic references causing session_start(): Failed to decode session object).</li>
+</ul></li>
+<li>Sockets:
+<ul>
+  <li>Added socket_export_stream() function for getting a stream compatible resource from a socket resource.</li>
+</ul></li>
+<li>SPL:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72051">#72051</a> (The reference in CallbackFilterIterator doesn't work as expected).</li>
+</ul></li>
+<li>SQLite3:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/68849">#68849</a> (bindValue is not using the right data type).</li>
+</ul></li>
+<li>Standard:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72075">#72075</a> (Referencing socket resources breaks stream_select).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72031">#72031</a> (array_column() against an array of objects discards all values matching null).</li>
+</ul></li>
+</ul>
+<!-- }}} --></section>
+
+<section class="version" id="7.0.6"><!-- {{{ 7.0.6 -->
+<h3>Version 7.0.6</h3>
+<b><time class='releasedate' datetime='2016-04-28'>28 Apr 2016</time></b>
+<ul><li>Core:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71930">#71930</a> (_zval_dtor_func: Assertion `(arr)-&gt;gc.refcount &lt;= 1' failed).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71922">#71922</a> (Crash on assert(new class{})).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71914">#71914</a> (Reference is lost in "switch").</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71871">#71871</a> (Interfaces allow final and abstract functions).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71859">#71859</a> (zend_objects_store_call_destructors operates on realloced memory, crashing).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71841">#71841</a> (EG(error_zval) is not handled well).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71750">#71750</a> (Multiple Heap Overflows in php_raw_url_encode/ php_url_encode).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71731">#71731</a> (Null coalescing operator and ArrayAccess).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71609">#71609</a> (Segmentation fault on ZTS with gethostbyname).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71414">#71414</a> (Inheritance, traits and interfaces).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71359">#71359</a> (Null coalescing operator and magic).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71334">#71334</a> (Cannot access array keys while uksort()).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69659">#69659</a> (ArrayAccess, isset() and the offsetExists method).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69537">#69537</a> (__debugInfo with empty string for key gives error).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/62059">#62059</a> (ArrayObject and isset are not friends).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71980">#71980</a> (Decorated/Nested Generator is Uncloseable in Finally).</li>
+</ul></li>
+<li>BCmath:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72093">#72093</a> (bcpowmod accepts negative scale and corrupts _one_ definition). (CVE-2016-4537, CVE-2016-4538)</li>
+</ul></li>
+<li>Curl:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71831">#71831</a> (CURLOPT_NOPROXY applied as long instead of string).</li>
+</ul></li>
+<li>Date:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71889">#71889</a> (DateInterval::format Segmentation fault).</li>
+</ul></li>
+<li>EXIF:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72094">#72094</a> (Out of bounds heap read access in exif header processing). (CVE-2016-4542, CVE-2016-4543, CVE-2016-4544)</li>
+</ul></li>
+<li>GD:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71912">#71912</a> (libgd: signedness vulnerability). (CVE-2016-3074)</li>
+</ul></li>
+<li>Intl:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71516">#71516</a> (IntlDateFormatter looses locale if pattern is set via constructor).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70455">#70455</a> (Missing constant: IntlChar::NO_NUMERIC_VALUE).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70451">#70451</a>, #70452 (Inconsistencies in return values of IntlChar methods).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/68893">#68893</a> (Stackoverflow in datefmt_create).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/66289">#66289</a> (Locale::lookup incorrectly returns en or en_US if locale is empty).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70484">#70484</a> (selectordinal doesn't work with named parameters).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/72061">#72061</a> (Out-of-bounds reads in zif_grapheme_stripos with negative offset). (CVE-2016-4540, CVE-2016-4541)</li>
+</ul></li>
+<li>ODBC:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/63171">#63171</a> (Script hangs after max_execution_time).</li>
+</ul></li>
+<li>Opcache:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71843">#71843</a> (null ptr deref ZEND_RETURN_SPEC_CONST_HANDLER).</li>
+</ul></li>
+<li>PDO:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/52098">#52098</a> (Own PDOStatement implementation ignore __call()).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71447">#71447</a> (Quotes inside comments not properly handled).</li>
+</ul></li>
+<li>PDO_DBlib:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71943">#71943</a> (dblib_handle_quoter needs to allocate an extra byte).</li>
+  <li>Add DBLIB-specific attributes for controlling timeouts.</li>
+</ul></li>
+<li>PDO_pgsql:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/62498">#62498</a> (pdo_pgsql inefficient when getColumnMeta() is used).</li>
+</ul></li>
+<li>Postgres:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71820">#71820</a> (pg_fetch_object binds parameters before call constructor).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71998">#71998</a> (Function pg_insert does not insert when column type = inet).</li>
+</ul></li>
+<li>SOAP:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71986">#71986</a> (Nested foreach assign-by-reference creates broken variables).</li>
+</ul></li>
+<li>SPL:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71838">#71838</a> (Deserializing serialized SPLObjectStorage-Object can't access properties in PHP).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71735">#71735</a> (Double-free in SplDoublyLinkedList::offsetSet).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/67582">#67582</a> (Cloned SplObjectStorage with overwritten getHash fails offsetExists()).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/52339">#52339</a> (SPL autoloader breaks class_exists()).</li>
+</ul></li>
+<li>Standard:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72116">#72116</a> (array_fill optimization breaks implementation).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71995">#71995</a> (Returning the same var twice from __sleep() produces broken serialized data).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71940">#71940</a> (Unserialize crushes on restore object reference).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71969">#71969</a> (str_replace returns an incorrect resulting array after a foreach by reference).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71891">#71891</a> (header_register_callback() and register_shutdown_function()).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71884">#71884</a> (Null pointer deref (segfault) in stream_context_get_default).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71840">#71840</a> (Unserialize accepts wrongly data).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71837">#71837</a> (Wrong arrays behaviour).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71827">#71827</a> (substr_replace bug, string length).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/67512">#67512</a> (php_crypt() crashes if crypt_r() does not exist or _REENTRANT is not defined).</li>
+</ul></li>
+<li>XML:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/72099">#72099</a> (xml_parse_into_struct segmentation fault). (CVE-2016-4539)</li>
+</ul></li>
+<li>Zip:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71923">#71923</a> (integer overflow in ZipArchive::getFrom*). (CVE-2016-3078)</li>
+</ul></li>
+</ul>
+<!-- }}} --></section>
+
+<section class="version" id="7.0.5"><!-- {{{ 7.0.5 -->
+<h3>Version 7.0.5</h3>
+<b><time class='releasedate' datetime='2016-03-31'>31 Mar 2016</time></b>
+<ul><li>Core:
+<ul>
+  <li>Huge pages disabled by default.</li>
+  <li>Added ability to enable huge pages in Zend Memory Manager through the environment variable USE_ZEND_ALLOC_HUGE_PAGES=1.</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71756">#71756</a> (Call-by-reference widens scope to uninvolved functions when used in switch).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71729">#71729</a> (Possible crash in zend_bin_strtod, zend_oct_strtod, zend_hex_strtod).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71695">#71695</a> (Global variables are reserved before execution).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71629">#71629</a> (Out-of-bounds access in php_url_decode in context php_stream_url_wrap_rfc2397).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71622">#71622</a> (Strings used in pass-as-reference cannot be used to invoke C::$callable()).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71596">#71596</a> (Segmentation fault on ZTS with date function (setlocale)).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71535">#71535</a> (Integer overflow in zend_mm_alloc_heap()).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71470">#71470</a> (Leaked 1 hashtable iterators).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71575">#71575</a> (ISO C does not allow extra &lsquo;;&rsquo; outside of a function).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71724">#71724</a> (yield from does not count EOLs).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71767">#71767</a> (ReflectionMethod::getDocComment returns the wrong comment).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71806">#71806</a> (php_strip_whitespace() fails on some numerical values).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71624">#71624</a> (`php -R` (PHP_MODE_PROCESS_STDIN) is broken).</li>
+</ul></li>
+<li>CLI Server:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/69953">#69953</a> (Support MKCALENDAR request method).</li>
+</ul></li>
+<li>Curl:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71694">#71694</a> (Support constant CURLM_ADDED_ALREADY).</li>
+</ul></li>
+<li>Date:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71635">#71635</a> (DatePeriod::getEndDate segfault).</li>
+</ul></li>
+<li>Fileinfo:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71527">#71527</a> (Buffer over-write in finfo_open with malformed magic file). (CVE-2015-8865)</li>
+</ul></li>
+<li>libxml:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71536">#71536</a> (Access Violation crashes php-cgi.exe).</li>
+</ul></li>
+<li>mbstring:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71906">#71906</a> (AddressSanitizer: negative-size-param (-1) in mbfl_strcut). (CVE-2016-4073)</li>
+</ul></li>
+<li>ODBC:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/47803">#47803</a>, #69526 (Executing prepared statements is succesfull only for the first two statements).</li>
+</ul></li>
+<li>PCRE:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71659">#71659</a> (segmentation fault in pcre running twig tests).</li>
+</ul></li>
+<li>PDO_DBlib:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/54648">#54648</a> (PDO::MSSQL forces format of datetime fields).</li>
+</ul></li>
+<li>Phar:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71625">#71625</a> (Crash in php7.dll with bad phar filename).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71317">#71317</a> (PharData fails to open specific file).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71860">#71860</a> (Invalid memory write in phar on filename with \0 in name). (CVE-2016-4072)</li>
+</ul></li>
+<li>phpdbg:
+<ul>
+  <li>Fixed crash when advancing (except step) inside an internal function.</li>
+</ul></li>
+<li>Session:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71683">#71683</a> (Null pointer dereference in zend_hash_str_find_bucket).</li>
+</ul></li>
+<li>SNMP:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71704">#71704</a> (php_snmp_error() Format String Vulnerability). (CVE-2016-4071)</li>
+</ul></li>
+<li>SPL:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71617">#71617</a> (private properties lost when unserializing ArrayObject).</li>
+</ul></li>
+<li>Standard:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71660">#71660</a> (array_column behaves incorrectly after foreach by reference).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71798">#71798</a> (Integer Overflow in php_raw_url_encode). (CVE-2016-4070)</li>
+</ul></li>
+<li>Zip:
+<ul>
+  <li>Update bundled libzip to 1.1.2.</li>
+</ul></li>
+</ul>
+<!-- }}} --></section>
+
+<section class="version" id="7.0.4"><!-- {{{ 7.0.4 -->
+<h3>Version 7.0.4</h3>
+<b><time class='releasedate' datetime='2016-03-03'>03 Mar 2016</time></b>
+<ul><li>Core:
+<ul>
+  <li>Fixed bug (Low probability segfault in zend_arena).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71441">#71441</a> (Typehinted Generator with return in try/finally crashes).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71442">#71442</a> (forward_static_call crash).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71443">#71443</a> (Segfault using built-in webserver with intl using symfony).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71449">#71449</a> (An integer overflow bug in php_implode()).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71450">#71450</a> (An integer overflow bug in php_str_to_str_ex()).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71474">#71474</a> (Crash because of VM stack corruption on Magento2).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71485">#71485</a> (Return typehint on internal func causes Fatal error when it throws exception).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71529">#71529</a> (Variable references on array elements don't work when using count).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71601">#71601</a> (finally block not executed after yield from).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71637">#71637</a> (Multiple Heap Overflow due to integer overflows in xml/filter_url/addcslashes). (CVE-2016-4344, CVE-2016-4345, CVE-2016-4346)</li>
+</ul></li>
+<li>CLI server:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71559">#71559</a> (Built-in HTTP server, we can download file in web by bug).</li>
+</ul></li>
+<li>CURL:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71523">#71523</a> (Copied handle with new option CURLOPT_HTTPHEADER crashes while curl_multi_exec).</li>
+  <li>Fixed memory leak in curl_getinfo().</li>
+</ul></li>
+<li>Date:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71525">#71525</a> (Calls to date_modify will mutate timelib_rel_time, causing date_date_set issues).</li>
+</ul></li>
+<li>Fileinfo:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71434">#71434</a> (finfo throws notice for specific python file).</li>
+</ul></li>
+<li>FPM:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/62172">#62172</a> (FPM not working with Apache httpd 2.4 balancer/fcgi setup).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71269">#71269</a> (php-fpm dumped core).</li>
+</ul></li>
+<li>Opcache:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71584">#71584</a> (Possible use-after-free of ZCG(cwd) in Zend Opcache).</li>
+</ul></li>
+<li>PCRE:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71537">#71537</a> (PCRE segfault from Opcache).</li>
+</ul></li>
+<li>phpdbg:
+<ul>
+  <li>Fixed inherited functions from unspecified files being included in phpdbg_get_executable().</li>
+</ul></li>
+<li>SOAP:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71610">#71610</a> (Type Confusion Vulnerability - SOAP / make_http_soap_request()). (CVE-2016-3185)</li>
+</ul></li>
+<li>Standard:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71603">#71603</a> (compact() maintains references in php7).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70720">#70720</a> (strip_tags improper php code parsing).</li>
+</ul></li>
+<li>XMLRPC:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71501">#71501</a> (xmlrpc_encode_request ignores encoding option).</li>
+</ul></li>
+<li>Zip:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71561">#71561</a> (NULL pointer dereference in Zip::ExtractTo).</li>
+</ul></li>
+</ul>
+<!-- }}} --></section>
+
+<section class="version" id="7.0.3"><!-- {{{ 7.0.3 -->
+<h3>Version 7.0.3</h3>
+<b><time class='releasedate' datetime='2016-02-04'>04 Feb 2016</time></b>
+<ul><li>Core:
+<ul>
+  <li>Added support for new HTTP 451 code.</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71039">#71039</a> (exec functions ignore length but look for NULL termination).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71089">#71089</a> (No check to duplicate zend_extension).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71201">#71201</a> (round() segfault on 64-bit builds).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71221">#71221</a> (Null pointer deref (segfault) in get_defined_vars via ob_start).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71248">#71248</a> (Wrong interface is enforced).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71273">#71273</a> (A wrong ext directory setup in php.ini leads to crash).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71275">#71275</a> (Bad method called on cloning an object having a trait).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71297">#71297</a> (Memory leak with consecutive yield from).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71300">#71300</a> (Segfault in zend_fetch_string_offset).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71314">#71314</a> (var_export(INF) prints INF.0).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71323">#71323</a> (Output of stream_get_meta_data can be falsified by its input).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71336">#71336</a> (Wrong is_ref on properties as exposed via get_object_vars()).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71459">#71459</a> (Integer overflow in iptcembed()).</li>
+</ul></li>
+<li>Apache2handler:
+<ul>
+  <li>Fix &gt;2G Content-Length headers in apache2handler.</li>
+</ul></li>
+<li>CURL:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71227">#71227</a> (Can't compile php_curl statically).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71225">#71225</a> (curl_setopt() fails to set CURLOPT_POSTFIELDS with reference to CURLFile).</li>
+</ul></li>
+<li>GD:
+<ul>
+  <li>Improved fix for bug <a href="http://bugs.php.net/70976">#70976</a>.</li>
+</ul></li>
+<li>Interbase:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71305">#71305</a> (Crash when optional resource is omitted).</li>
+</ul></li>
+<li>LDAP:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71249">#71249</a> (ldap_mod_replace/ldap_mod_add store value as string "Array").</li>
+</ul></li>
+<li>mbstring:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71397">#71397</a> (mb_send_mail segmentation fault).</li>
+</ul></li>
+<li>OpenSSL:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71475">#71475</a> (openssl_seal() uninitialized memory usage).</li>
+</ul></li>
+<li>PCRE:
+<ul>
+  <li>Upgraded bundled PCRE library to 8.38. (CVE-2015-8383, CVE-2015-8386, CVE-2015-8387, CVE-2015-8389, CVE-2015-8390, CVE-2015-8391, CVE-2015-8393, CVE-2015-8394)</li>
+</ul></li>
+<li>Phar:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71354">#71354</a> (Heap corruption in tar/zip/phar parser). (CVE-2016-4342)</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71331">#71331</a> (Uninitialized pointer in phar_make_dirstream()). (CVE-2016-4343)</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71391">#71391</a> (NULL Pointer Dereference in phar_tar_setupmetadata()).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71488">#71488</a> (Stack overflow when decompressing tar archives). (CVE-2016-2554)</li>
+</ul></li>
+<li>SOAP:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70979">#70979</a> (crash with bad soap request).</li>
+</ul></li>
+<li>SPL:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71204">#71204</a> (segfault if clean spl_autoload_funcs while autoloading).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71202">#71202</a> (Autoload function registered by another not activated immediately).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71311">#71311</a> (Use-after-free vulnerability in SPL(ArrayObject, unserialize)).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71313">#71313</a> (Use-after-free vulnerability in SPL(SplObjectStorage, unserialize)).</li>
+</ul></li>
+<li>Standard:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71287">#71287</a> (Error message contains hexadecimal instead of decimal number).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71264">#71264</a> (file_put_contents() returns unexpected value when filesystem runs full).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71245">#71245</a> (file_get_contents() ignores "header" context option if it's a reference).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71220">#71220</a> (Null pointer deref (segfault) in compact via ob_start).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71190">#71190</a> (substr_replace converts integers in original $search array to strings).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71188">#71188</a> (str_replace converts integers in original $search array to strings).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71132">#71132</a>, <a href="http://bugs.php.net/71197">#71197</a> (range() segfaults).</li>
+</ul></li>
+<li>WDDX:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71335">#71335</a> (Type Confusion in WDDX Packet Deserialization).</li>
+</ul></li>
+</ul>
+<!-- }}} --></section>
+
+<section class="version" id="7.0.2"><!-- {{{ 7.0.2 -->
+<h3>Version 7.0.2</h3>
+<b><time class='releasedate' datetime='2016-01-07'>07 Jan 2016</time></b>
+<ul><li>Core:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71165">#71165</a> (-DGC_BENCH=1 doesn't work on PHP7).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71163">#71163</a> (Segmentation Fault: cleanup_unfinished_calls).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71109">#71109</a> (ZEND_MOD_CONFLICTS("xdebug") doesn't work).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71092">#71092</a> (Segmentation fault with return type hinting).</li>
+  <li>Fixed bug memleak in header_register_callback.</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71067">#71067</a> (Local object in class method stays in memory for each call).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/66909">#66909</a> (configure fails utf8_to_mutf7 test).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70781">#70781</a> (Extension tests fail on dynamic ext dependency).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71089">#71089</a> (No check to duplicate zend_extension).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71086">#71086</a> (Invalid numeric literal parse error within highlight_string() function).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71154">#71154</a> (Incorrect HT iterator invalidation causes iterator reuse).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/52355">#52355</a> (Negating zero does not produce negative zero).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/66179">#66179</a> (var_export() exports float as integer).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70804">#70804</a> (Unary add on negative zero produces positive zero).</li>
+</ul></li>
+<li>CURL:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71144">#71144</a> (Sementation fault when using cURL with ZTS).</li>
+</ul></li>
+<li>DBA:
+<ul>
+  <li>Fixed key leak with invalid resource.</li>
+</ul></li>
+<li>Filter:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71063">#71063</a> (filter_input(INPUT_ENV, ..) does not work).</li>
+</ul></li>
+<li>FTP:
+<ul>
+  <li>Implemented FR <a href="http://bugs.php.net/55651">#55651</a> (Option to ignore the returned FTP PASV address).</li>
+</ul></li>
+<li>FPM:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70755">#70755</a> (fpm_log.c memory leak and buffer overflow). (CVE-2016-5114)</li>
+</ul></li>
+<li>GD:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70976">#70976</a> (Memory Read via gdImageRotateInterpolated Array Index Out of Bounds). (CVE-2016-1903)</li>
+</ul></li>
+<li>Mbstring:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71066">#71066</a> (mb_send_mail: Program terminated with signal SIGSEGV, Segmentation fault).</li>
+</ul></li>
+<li>Opcache:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71127">#71127</a> (Define in auto_prepend_file is overwrite).</li>
+</ul></li>
+<li>PCRE:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71178">#71178</a> (preg_replace with arrays creates [0] in replace array if not already set).</li>
+</ul></li>
+<li>Readline:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71094">#71094</a> (readline_completion_function corrupts static array on second TAB).</li>
+</ul></li>
+<li>Session:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71122">#71122</a> (Session GC may not remove obsolete session data).</li>
+</ul></li>
+<li>SPL:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71077">#71077</a> (ReflectionMethod for ArrayObject constructor returns wrong number of parameters).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71153">#71153</a> (Performance Degradation in ArrayIterator with large arrays).</li>
+</ul></li>
+<li>Standard:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71270">#71270</a> (Heap BufferOver Flow in escapeshell functions). (CVE-2016-1904)</li>
+</ul></li>
+<li>WDDX:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70661">#70661</a> (Use After Free Vulnerability in WDDX Packet Deserialization).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70741">#70741</a> (Session WDDX Packet Deserialization Type Confusion Vulnerability).</li>
+</ul></li>
+<li>XMLRPC:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70728">#70728</a> (Type Confusion Vulnerability in PHP_to_XMLRPC_worker).</li>
+</ul></li>
+</ul>
+<!-- }}} --></section>
+
+<section class="version" id="7.0.1"><!-- {{{ 7.0.1 -->
+<h3>Version 7.0.1</h3>
+<b><time class='releasedate' datetime='2015-12-17'>17 Dec 2015</time></b>
+<ul><li>Core:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71105">#71105</a> (Format String Vulnerability in Class Name Error Message). (CVE-2015-8617)</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70831">#70831</a> (Compile fails on system with 160 CPUs).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71006">#71006</a> (symbol referencing errors on Sparc/Solaris).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70997">#70997</a> (When using parentClass:: instead of parent::, static context changed).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70970">#70970</a> (Segfault when combining error handler with output buffering).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70967">#70967</a> (Weird error handling for __toString when Error is thrown).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70958">#70958</a> (Invalid opcode while using ::class as trait method paramater default value).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70944">#70944</a> (try{ } finally{} can create infinite chains of exceptions).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70931">#70931</a> (Two errors messages are in conflict).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70904">#70904</a> (yield from incorrectly marks valid generator as finished).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70899">#70899</a> (buildconf failure in extensions).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/61751">#61751</a> (SAPI build problem on AIX: Undefined symbol: php_register_internal_extensions).</li>
+  <li>Fixed \int (or generally every scalar type name with leading backslash) to not be accepted as type name.</li>
+  <li>Fixed exception not being thrown immediately into a generator yielding from an array.</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70987">#70987</a> (static::class within Closure::call() causes segfault).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/71013">#71013</a> (Incorrect exception handler with yield from).</li>
+  <li>Fixed double free in error condition of format printer.</li>
+</ul></li>
+<li>CLI server:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71005">#71005</a> (Segfault in php_cli_server_dispatch_router()).</li>
+</ul></li>
+<li>Intl:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71020">#71020</a> (Use after free in Collator::sortWithSortKeys). (CVE-2015-8616)</li>
+</ul></li>
+<li>Mysqlnd:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/68077">#68077</a> (LOAD DATA LOCAL INFILE / open_basedir restriction).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/68344">#68344</a> (MySQLi does not provide way to disable peer certificate validation) by introducing MYSQLI_CLIENT_SSL_DONT_VERIFY_SERVER_CERT connection flag.</li>
+</ul></li>
+<li>OCI8:
+<ul>
+  <li>Fixed LOB implementation size_t/zend_long mismatch reported by gcov.</li>
+</ul></li>
+<li>Opcache:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71024">#71024</a> (Unable to use PHP 7.0 x64 side-by-side with PHP 5.6 x32 on the same server).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70991">#70991</a> (zend_file_cache.c:710: error: array type has incomplete element type).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70977">#70977</a> (Segmentation fault with opcache.huge_code_pages=1).</li>
+</ul></li>
+<li>PDO_Firebird:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/60052">#60052</a> (Integer returned as a 64bit integer on X64_86).</li>
+</ul></li>
+<li>Phpdbg:
+<ul>
+  <li>Fixed stderr being written to stdout.</li>
+</ul></li>
+<li>Reflection:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71018">#71018</a> (ReflectionProperty::setValue() behavior changed).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70982">#70982</a> (setStaticPropertyValue behaviors inconsistently with 5.6).</li>
+</ul></li>
+<li>Soap:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70993">#70993</a> (Array key references break argument processing).</li>
+</ul></li>
+<li>SPL:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71028">#71028</a> (Undefined index with ArrayIterator).</li>
+</ul></li>
+<li>SQLite3:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/71049">#71049</a> (SQLite3Stmt::execute() releases bound parameter instead of internal buffer).</li>
+</ul></li>
+<li>Standard:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70999">#70999</a> (php_random_bytes: called object is not a function).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70960">#70960</a> (ReflectionFunction for array_unique returns wrong number of parameters).</li>
+</ul></li>
+<li>Streams/Socket:
+<ul>
+  <li>Add IPV6_V6ONLY constant / make it usable in stream contexts.</li>
+</ul></li>
+</ul>
+<!-- }}} --></section>
+
+<section class="version" id="7.0.0"><!-- {{{ 7.0.0 -->
+<h3>Version 7.0.0</h3>
+<b><time class='releasedate' datetime='2015-12-03'>03 Dec 2015</time></b>
+<ul><li>Core:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70947">#70947</a> (INI parser segfault with INI_SCANNER_TYPED).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70914">#70914</a> (zend_throw_or_error() format string vulnerability).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70912">#70912</a> (Null ptr dereference instantiating class with invalid array property).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70895">#70895</a>, <a href="http://bugs.php.net/70898">#70898</a> (null ptr deref and segfault with crafted calable).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70249">#70249</a> (Segmentation fault while running PHPUnit tests on phpBB 3.2-dev).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70805">#70805</a> (Segmentation faults whilst running Drupal 8 test suite).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70842">#70842</a> (Persistent Stream Segmentation Fault).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70862">#70862</a> (Several functions do not check return code of php_stream_copy_to_mem()).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70863">#70863</a> (Incorect logic to increment_function for proxy objects).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70323">#70323</a> (Regression in zend_fetch_debug_backtrace() can cause segfaults).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70873">#70873</a> (Regression on private static properties access).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70748">#70748</a> (Segfault in ini_lex () at Zend/zend_ini_scanner.l).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70689">#70689</a> (Exception handler does not work as expected).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70430">#70430</a> (Stack buffer overflow in zend_language_parser()).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70782">#70782</a> (null ptr deref and segfault (zend_get_class_fetch_type)).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70785">#70785</a> (Infinite loop due to exception during identical comparison).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70630">#70630</a> (Closure::call/bind() crash with ReflectionFunction-&gt; getClosure()).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70662">#70662</a> (Duplicate array key via undefined index error handler).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70681">#70681</a> (Segfault when binding $this of internal instance method to null).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70685">#70685</a> (Segfault for getClosure() internal method rebind with invalid $this).</li>
+  <li>Added zend_internal_function.reserved[] fields.</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70557">#70557</a> (Memleak on return type verifying failed).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70555">#70555</a> (fun_get_arg() on unsetted vars return UNKNOW).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70548">#70548</a> (Redundant information printed in case of uncaught engine exception).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70547">#70547</a> (unsetting function variables corrupts backtrace).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70528">#70528</a> (assert() with instanceof adds apostrophes around class name).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70481">#70481</a> (Memory leak in auto_global_copy_ctor() in ZTS build).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70431">#70431</a> (Memory leak in php_ini.c).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70478">#70478</a> (**= does no longer work).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70398">#70398</a> (SIGSEGV, Segmentation fault zend_ast_destroy_ex).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70332">#70332</a> (Wrong behavior while returning reference on object).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70300">#70300</a> (Syntactical inconsistency with new group use syntax).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70321">#70321</a> (Magic getter breaks reference to array property).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70187">#70187</a> (Notice: unserialize(): Unexpected end of serialized data).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70145">#70145</a> (From field incorrectly parsed from headers).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70370">#70370</a> (Bundled libtool.m4 doesn't handle FreeBSD 10 when building extensions).</li>
+  <li>Fixed bug causing exception traces with anon classes to be truncated.</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70397">#70397</a> (Segmentation fault when using Closure::call and yield).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70299">#70299</a> (Memleak while assigning object offsetGet result).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70288">#70288</a> (Apache crash related to ZEND_SEND_REF).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70262">#70262</a> (Accessing array crashes PHP 7.0beta3).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70258">#70258</a> (Segfault if do_resize fails to allocated memory).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70253">#70253</a> (segfault at _efree () in zend_alloc.c:1389).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70240">#70240</a> (Segfault when doing unset($var());).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70223">#70223</a> (Incrementing value returned by magic getter).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70215">#70215</a> (Segfault when __invoke is static).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70207">#70207</a> (Finally is broken with opcache).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70173">#70173</a> (ZVAL_COPY_VALUE_EX broken for 32bit Solaris Sparc).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69487">#69487</a> (SAPI may truncate POST data).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70198">#70198</a> (Checking liveness does not work as expected).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70241">#70241</a>, <a href="http://bugs.php.net/70293">#70293</a> (Skipped assertions affect Generator returns).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70239">#70239</a> (Creating a huge array doesn't result in exhausted, but segfault).</li>
+  <li>Fixed "finally" issues.</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70098">#70098</a> (Real memory usage doesn't decrease).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70159">#70159</a> (__CLASS__ is lost in closures).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70156">#70156</a> (Segfault in zend_find_alias_name).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70124">#70124</a> (null ptr deref / seg fault in ZEND_HANDLE_EXCEPTION).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70117">#70117</a> (Unexpected return type error).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70106">#70106</a> (Inheritance by anonymous class).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69674">#69674</a> (SIGSEGV array.c:953).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70164">#70164</a> (__COMPILER_HALT_OFFSET__ under namespace is not defined).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70108">#70108</a> (sometimes empty $_SERVER['QUERY_STRING']).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70179">#70179</a> ($this refcount issue).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69896">#69896</a> ('asm' operand has impossible constraints).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70183">#70183</a> (null pointer deref (segfault) in zend_eval_const_expr).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70182">#70182</a> (Segfault in ZEND_ASSIGN_DIV_SPEC_CV_UNUSED_HANDLER).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69793">#69793</a> (Remotely triggerable stack exhaustion via recursive method calls).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69892">#69892</a> (Different arrays compare indentical due to integer key truncation).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70121">#70121</a> (unserialize() could lead to unexpected methods execution / NULL pointer deref).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70089">#70089</a> (segfault at ZEND_FETCH_DIM_W_SPEC_VAR_CONST_HANDLER ()).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70057">#70057</a> (Build failure on 32-bit Mac OS X 10.6.8: recursive inlining).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70012">#70012</a> (Exception lost with nested finally block).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69996">#69996</a> (Changing the property of a cloned object affects the original).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70083">#70083</a> (Use after free with assign by ref to overloaded objects).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70006">#70006</a> (cli - function with default arg = STDOUT crash output).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69521">#69521</a> (Segfault in gc_collect_cycles()).</li>
+  <li>Improved zend_string API.</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69955">#69955</a> (Segfault when trying to combine [] and assign-op on ArrayAccess object).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69957">#69957</a> (Different ways of handling div/mod/intdiv).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69900">#69900</a> (Too long timeout on pipes).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69872">#69872</a> (uninitialised value in strtr with array).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69868">#69868</a> (Invalid read of size 1 in zend_compile_short_circuiting).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69849">#69849</a> (Broken output of apache_request_headers).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69840">#69840</a> (iconv_substr() doesn't work with UTF-16BE).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69823">#69823</a> (PHP 7.0.0alpha1 segmentation fault when exactly 33 extensions are loaded).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69805">#69805</a> (null ptr deref and seg fault in zend_resolve_class_name).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69802">#69802</a> (Reflection on Closure::__invoke borks type hint class name).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69761">#69761</a> (Serialization of anonymous classes should be prevented).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69551">#69551</a> (parse_ini_file() and parse_ini_string() segmentation fault).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69781">#69781</a> (phpinfo() reports Professional Editions of Windows 7/8/8.1/10 as "Business").</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69835">#69835</a> (phpinfo() does not report many Windows SKUs).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69889">#69889</a> (Null coalesce operator doesn't work for string offsets).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69891">#69891</a> (Unexpected array comparison result).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69892">#69892</a> (Different arrays compare indentical due to integer key truncation).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69893">#69893</a> (Strict comparison between integer and empty string keys crashes).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69767">#69767</a> (Default parameter value with wrong type segfaults).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69756">#69756</a> (Fatal error: Nesting level too deep - recursive dependency ? with ===).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69758">#69758</a> (Item added to array not being removed by array_pop/shift ).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/68475">#68475</a> (Add support for $callable() sytnax with 'Class::method').</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69485">#69485</a> (Double free on zend_list_dtor).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69427">#69427</a> (Segfault on magic method __call of private method in superclass).</li>
+  <li>Improved __call() and __callStatic() magic method handling. Now they are called in a stackless way using ZEND_CALL_TRAMPOLINE opcode, without additional stack frame.</li>
+  <li>Optimized strings concatenation.</li>
+  <li>Fixed weird operators behavior. Division by zero now emits warning and returns +/-INF, modulo by zero and intdid() throws an exception, shifts by negative offset throw exceptions. Compile-time evaluation of division by zero is disabled.</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69371">#69371</a> (Hash table collision leads to inaccessible array keys).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/68933">#68933</a> (Invalid read of size 8 in zend_std_read_property).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/68252">#68252</a> (segfault in Zend/zend_hash.c in function _zend_hash_del_el).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/65598">#65598</a> (Closure executed via static autoload incorrectly marked as static).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/66811">#66811</a> (Cannot access static::class in lambda, writen outside of a class).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69568">#69568</a> (call a private function in closure failed).</li>
+  <li>Added PHP_INT_MIN constant.</li>
+  <li>Added Closure::call() method.</li>
+  <li>Fixed bug <a href="http://bugs.php.net/67959">#67959</a> (Segfault when calling phpversion('spl')).</li>
+  <li>Implemented the RFC `Catchable "Call to a member function bar() on a non-object"`.</li>
+  <li>Added options parameter for unserialize allowing to specify acceptable classes (https://wiki.php.net/rfc/secure_unserialize).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/63734">#63734</a> (Garbage collector can free zvals that are still referenced).</li>
+  <li>Removed ZEND_ACC_FINAL_CLASS, promoting ZEND_ACC_FINAL as final class modifier.</li>
+  <li>is_long() &amp; is_integer() is now an alias of is_int().</li>
+  <li>Implemented FR <a href="http://bugs.php.net/55467">#55467</a> (phpinfo: PHP Variables with $ and single quotes).</li>
+  <li>Added ?? operator.</li>
+  <li>Added &lt;=&gt; operator.</li>
+  <li>Added \u{xxxxx} Unicode Codepoint Escape Syntax.</li>
+  <li>Fixed oversight where define() did not support arrays yet const syntax did.</li>
+  <li>Use "integer" and "float" instead of "long" and "double" in ZPP, type hint and conversion error messages.</li>
+  <li>Implemented FR <a href="http://bugs.php.net/55428">#55428</a> (E_RECOVERABLE_ERROR when output buffering in output buffering handler).</li>
+  <li>Removed scoped calls of non-static methods from an incompatible $this context.</li>
+  <li>Removed support for #-style comments in ini files.</li>
+  <li>Removed support for assigning the result of new by reference.</li>
+  <li>Invalid octal literals in source code now produce compile errors, fixes PHPSadness #31.</li>
+  <li>Removed dl() function on fpm-fcgi.</li>
+  <li>Removed support for hexadecimal numeric strings.</li>
+  <li>Removed obsolete extensions and SAPIs. See the full list in UPGRADING.</li>
+  <li>Added NULL byte protection to exec, system and passthru.</li>
+  <li>Added error_clear_last() function.</li>
+  <li>Fixed bug <a href="http://bugs.php.net/68797">#68797</a> (Number 2.2250738585072012e-308 converted incorrectly).</li>
+  <li>Improved zend_qsort(using hybrid sorting algo) for better performance, and also renamed zend_qsort to zend_sort.</li>
+  <li>Added stable sorting algo zend_insert_sort.</li>
+  <li>Improved zend_memnchr(using sunday algo) for better performance.</li>
+  <li>Implemented the RFC `Scalar Type Decalarations v0.5`.</li>
+  <li>Implemented the RFC `Group Use Declarations`.</li>
+  <li>Implemented the RFC `Continue Output Buffering`.</li>
+  <li>Implemented the RFC `Constructor behaviour of internal classes`.</li>
+  <li>Implemented the RFC `Fix "foreach" behavior`.</li>
+  <li>Implemented the RFC `Generator Delegation`.</li>
+  <li>Implemented the RFC `Anonymous Class Support`.</li>
+  <li>Implemented the RFC `Context Sensitive Lexer`.</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69511">#69511</a> (Off-by-one buffer overflow in php_sys_readlink).</li>
+</ul></li>
+<li>CLI server:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/68291">#68291</a> (404 on urls with '+').</li>
+  <li>Fixed bug <a href="http://bugs.php.net/66606">#66606</a> (Sets HTTP_CONTENT_TYPE but not CONTENT_TYPE).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70264">#70264</a> (CLI server directory traversal).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69655">#69655</a> (php -S changes MKCALENDAR request method to MKCOL).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/64878">#64878</a> (304 responses return Content-Type header).</li>
+  <li>Refactor MIME type handling to use a hash table instead of linear search.</li>
+  <li>Update the MIME type list from the one shipped by Apache HTTPD.</li>
+  <li>Added support for SEARCH WebDav method.</li>
+</ul></li>
+<li>COM:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/69939">#69939</a> (Casting object to bool returns false).</li>
+</ul></li>
+<li>Curl:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70330">#70330</a> (Segmentation Fault with multiple "curl_copy_handle").</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70163">#70163</a> (curl_setopt_array() type confusion).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70065">#70065</a> (curl_getinfo() returns corrupted values).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69831">#69831</a> (Segmentation fault in curl_getinfo).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/68937">#68937</a> (Segfault in curl_multi_exec).</li>
+  <li>Removed support for unsafe file uploads.</li>
+</ul></li>
+<li>Date:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70245">#70245</a> (strtotime does not emit warning when 2nd parameter is object or string).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70266">#70266</a> (DateInterval::__construct.interval_spec is not supposed to be optional).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70277">#70277</a> (new DateTimeZone($foo) is ignoring text after null byte).</li>
+  <li>Fixed day_of_week function as it could sometimes return negative values internally.</li>
+  <li>Removed $is_dst parameter from mktime() and gmmktime().</li>
+  <li>Removed date.timezone warning (https://wiki.php.net/rfc/date.timezone_warning_removal).</li>
+  <li>Added "v" DateTime format modifier to get the 3-digit version of fraction of seconds.</li>
+  <li>Implemented FR <a href="http://bugs.php.net/69089">#69089</a> (Added DateTime::RFC3339_EXTENDED to output in RFC3339 Extended format which includes fraction of seconds).</li>
+</ul></li>
+<li>DBA:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/62490">#62490</a> (dba_delete returns true on missing item (inifile)).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/68711">#68711</a> (useless comparisons).</li>
+</ul></li>
+<li>DOM:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70558">#70558</a> ("Couldn't fetch" error in DOMDocument::registerNodeClass()).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70001">#70001</a> (Assigning to DOMNode::textContent does additional entity encoding).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69846">#69846</a> (Segmenation fault (access violation) when iterating over DOMNodeList).</li>
+  <li>Made DOMNode::textContent writeable.</li>
+</ul></li>
+<li>EXIF:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70385">#70385</a> (Buffer over-read in exif_read_data with TIFF IFD tag byte value of 32 bytes).</li>
+</ul></li>
+<li>Fileinfo:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/66242">#66242</a> (libmagic: don't assume char is signed).</li>
+</ul></li>
+<li>Filter:
+<ul>
+  <li>New FILTER_VALIDATE_DOMAIN and better RFC conformance for FILTER_VALIDATE_URL.</li>
+</ul></li>
+<li>FPM:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70538">#70538</a> ("php-fpm -i" crashes).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70279">#70279</a> (HTTP Authorization Header is sometimes passed to newer reqeusts).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/68945">#68945</a> (Unknown admin values segfault pools).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/65933">#65933</a> (Cannot specify config lines longer than 1024 bytes).</li>
+  <li>Implemented FR <a href="http://bugs.php.net/67106">#67106</a> (Split main fpm config).</li>
+</ul></li>
+<li>FTP:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/69082">#69082</a> (FTPS support on Windows).</li>
+</ul></li>
+<li>GD:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/53156">#53156</a> (imagerectangle problem with point ordering).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/66387">#66387</a> (Stack overflow with imagefilltoborder). (CVE-2015-8874)</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70102">#70102</a> (imagecreatefromwebm() shifts colors).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/66590">#66590</a> (imagewebp() doesn't pad to even length).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/66882">#66882</a> (imagerotate by -90 degrees truncates image by 1px).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70064">#70064</a> (imagescale(..., IMG_BICUBIC) leaks memory).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69024">#69024</a> (imagescale segfault with palette based image).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/53154">#53154</a> (Zero-height rectangle has whiskers).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/67447">#67447</a> (imagecrop() add a black line when cropping).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/68714">#68714</a> (copy 'n paste error).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/66339">#66339</a> (PHP segfaults in imagexbm).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70047">#70047</a> (gd_info() doesn't report WebP support).</li>
+  <li>Replace libvpx with libwebp for bundled libgd.</li>
+  <li>Fixed bug <a href="http://bugs.php.net/61221">#61221</a> (imagegammacorrect function loses alpha channel).</li>
+  <li>Made fontFetch's path parser thread-safe.</li>
+  <li>Removed T1Lib support.</li>
+</ul></li>
+<li>GMP:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70284">#70284</a> (Use after free vulnerability in unserialize() with GMP).</li>
+</ul></li>
+<li>hash:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70312">#70312</a> (HAVAL gives wrong hashes in specific cases).</li>
+</ul></li>
+<li>IMAP:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70158">#70158</a> (Building with static imap fails).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69998">#69998</a> (curl multi leaking memory).</li>
+</ul></li>
+<li>Intl:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70453">#70453</a> (IntlChar::foldCase() incorrect arguments and missing constants).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70454">#70454</a> (IntlChar::forDigit second parameter should be optional).</li>
+  <li>Removed deprecated aliases datefmt_set_timezone_id() and IntlDateFormatter::setTimeZoneID().</li>
+</ul></li>
+<li>JSON:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/62010">#62010</a> (json_decode produces invalid byte-sequences).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/68546">#68546</a> (json_decode() Fatal error: Cannot access property started with '\0').</li>
+  <li>Replace non-free JSON parser with a parser from Jsond extension, fixes <a href="http://bugs.php.net/63520">#63520</a> (JSON extension includes a problematic license statement).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/68938">#68938</a> (json_decode() decodes empty string without error).</li>
+</ul></li>
+<li>LDAP:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/47222">#47222</a> (Implement LDAP_OPT_DIAGNOSTIC_MESSAGE).</li>
+</ul></li>
+<li>LiteSpeed:
+<ul>
+  <li>Updated LiteSpeed SAPI code from V5.5 to V6.6.</li>
+</ul></li>
+<li>libxml:
+<ul>
+  <li>Fixed handling of big lines in error messages with libxml &gt;= 2.9.0.</li>
+</ul></li>
+<li>Mcrypt:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70625">#70625</a> (mcrypt_encrypt() won't return data when no IV was specified under RC4).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69833">#69833</a> (mcrypt fd caching not working).</li>
+  <li>Fixed possible read after end of buffer and use after free.</li>
+  <li>Removed mcrypt_generic_end() alias.</li>
+  <li>Removed mcrypt_ecb(), mcrypt_cbc(), mcrypt_cfb(), mcrypt_ofb().</li>
+</ul></li>
+<li>Mysqli:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/32490">#32490</a> (constructor of mysqli has wrong name).</li>
+</ul></li>
+<li>Mysqlnd:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70949">#70949</a> (SQL Result Sets With NULL Can Cause Fatal Memory Errors).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70384">#70384</a> (mysqli_real_query():Unknown type 245 sent by the server).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70456">#70456</a> (mysqlnd doesn't activate TCP keep-alive when connecting to a server).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70572">#70572</a> segfault in mysqlnd_connect.</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69796">#69796</a> (mysqli_stmt::fetch doesn't assign null values to bound variables).</li>
+</ul></li>
+<li>OCI8:
+<ul>
+  <li>Fixed memory leak with LOBs.</li>
+  <li>Fixed bug <a href="http://bugs.php.net/68298">#68298</a> (OCI int overflow).</li>
+  <li>Corrected oci8 hash destructors to prevent segfaults, and a few other fixes.</li>
+</ul></li>
+<li>ODBC:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/69975">#69975</a> (PHP segfaults when accessing nvarchar(max) defined columns).</li>
+</ul></li>
+<li>Opcache:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70656">#70656</a> (require() statement broken after opcache_reset() or a few hours of use).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70843">#70843</a> (Segmentation fault on MacOSX with opcache.file_cache_only=1).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70724">#70724</a> (Undefined Symbols from opcache.so on Mac OS X 10.10).</li>
+  <li>Fixed compatibility with Windows 10 (see also bug <a href="http://bugs.php.net/70652">#70652</a>).</li>
+  <li>Attmpt to fix "Unable to reattach to base address" problem.</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70423">#70423</a> (Warning Internal error: wrong size calculation).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70237">#70237</a> (Empty while and do-while segmentation fault with opcode on CLI enabled).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70111">#70111</a> (Segfault when a function uses both an explicit return type and an explicit cast).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70058">#70058</a> (Build fails when building for i386).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70022">#70022</a> (Crash with opcache using opcache.file_cache_only=1).</li>
+  <li>Removed opcache.load_comments configuration directive. Now doc comments loading costs nothing and always enabled.</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69838">#69838</a> (Wrong size calculation for function table).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69688">#69688</a> (segfault with eval and opcache fast shutdown).</li>
+  <li>Added experimental (disabled by default) file based opcode cache.</li>
+  <li>Fixed bug with try blocks being removed when extended_info opcode generation is turned on.</li>
+  <li>Fixed bug <a href="http://bugs.php.net/68644">#68644</a> (strlen incorrect : mbstring + func_overload=2 +UTF-8 + Opcache).</li>
+</ul></li>
+<li>OpenSSL:
+<ul>
+  <li>Require at least OpenSSL version 0.9.8.</li>
+  <li>Fixed bug <a href="http://bugs.php.net/68312">#68312</a> (Lookup for openssl.cnf causes a message box).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/55259">#55259</a> (openssl extension does not get the DH parameters from DH key resource).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70395">#70395</a> (Missing ARG_INFO for openssl_seal()).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/60632">#60632</a> (openssl_seal fails with AES).</li>
+  <li>Implemented FR <a href="http://bugs.php.net/70438">#70438</a> (Add IV parameter for openssl_seal and openssl_open).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70014">#70014</a> (openssl_random_pseudo_bytes() is not cryptographically secure). (CVE-2015-8867)</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69882">#69882</a> (OpenSSL error "key values mismatch" after openssl_pkcs12_read with extra cert).</li>
+  <li>Added "alpn_protocols" SSL context option allowing encrypted client/server streams to negotiate alternative protocols using the ALPN TLS extension when built against OpenSSL 1.0.2 or newer. Negotiated protocol information is accessible through stream_get_meta_data() output.</li>
+  <li>Removed "CN_match" and "SNI_server_name" SSL context options. Use automatic detection or the "peer_name" option instead.</li>
+</ul></li>
+<li>Pcntl:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70386">#70386</a> (Can't compile on NetBSD because of missing WCONTINUED and WIFCONTINUED).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/60509">#60509</a> (pcntl_signal doesn't decrease ref-count of old handler when setting SIG_DFL).</li>
+  <li>Implemented FR <a href="http://bugs.php.net/68505">#68505</a> (Added wifcontinued and wcontinued).</li>
+  <li>Added rusage support to pcntl_wait() and pcntl_waitpid().</li>
+</ul></li>
+<li>PCRE:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70232">#70232</a> (Incorrect bump-along behavior with \K and empty string match).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70345">#70345</a> (Multiple vulnerabilities related to PCRE functions).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70232">#70232</a> (Incorrect bump-along behavior with \K and empty string match).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/53823">#53823</a> (preg_replace: * qualifier on unicode replace garbles the string).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69864">#69864</a> (Segfault in preg_replace_callback).</li>
+  <li>Removed support for the /e (PREG_REPLACE_EVAL) modifier.</li>
+</ul></li>
+<li>PDO:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70861">#70861</a> (Segmentation fault in pdo_parse_params() during Drupal 8 test suite).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70389">#70389</a> (PDO constructor changes unrelated variables).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70272">#70272</a> (Segfault in pdo_mysql).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70221">#70221</a> (persistent sqlite connection + custom function segfaults).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/59450">#59450</a> (./configure fails with "Cannot find php_pdo_driver.h").</li>
+</ul></li>
+<li>PDO_DBlib:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/69757">#69757</a> (Segmentation fault on nextRowset).</li>
+</ul></li>
+<li>PDO_mysql:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/68424">#68424</a> (Add new PDO mysql connection attr to control multi statements option).</li>
+</ul></li>
+<li>PDO_OCI:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70308">#70308</a> (PDO::ATTR_PREFETCH is ignored).</li>
+</ul></li>
+<li>PDO_pgsql:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/69752">#69752</a> (PDOStatement::execute() leaks memory with DML Statements when closeCuror() is u).</li>
+  <li>Removed PGSQL_ATTR_DISABLE_NATIVE_PREPARED_STATEMENT attribute in favor of ATTR_EMULATE_PREPARES).</li>
+</ul></li>
+<li>Phar:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/69720">#69720</a> (Null pointer dereference in phar_get_fp_offset()).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70433">#70433</a> (Uninitialized pointer in phar_make_dirstream when zip entry filename is "/").</li>
+  <li>Improved fix for bug <a href="http://bugs.php.net/69441">#69441</a>.</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70019">#70019</a> (Files extracted from archive may be placed outside of destination directory).</li>
+</ul></li>
+<li>Phpdbg:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70614">#70614</a> (incorrect exit code in -rr mode with Exceptions).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70532">#70532</a> (phpdbg must respect set_exception_handler).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70531">#70531</a> (Run and quit mode (-qrr) should not fallback to interactive mode).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70533">#70533</a> (Help overview (-h) does not rpint anything under Windows).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70449">#70449</a> (PHP won't compile on 10.4 and 10.5 because of missing constants).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70214">#70214</a> (FASYNC not defined, needs sys/file.h include).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70138">#70138</a> (Segfault when displaying memory leaks).</li>
+</ul></li>
+<li>Reflection:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70650">#70650</a> (Wrong docblock assignment).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70674">#70674</a> (ReflectionFunction::getClosure() leaks memory when used for internal functions).</li>
+  <li>Fixed bug causing bogus traces for ReflectionGenerator::getTrace().</li>
+  <li>Fixed inheritance chain of Reflector interface.</li>
+  <li>Added ReflectionGenerator class.</li>
+  <li>Added reflection support for return types and type declarations.</li>
+</ul></li>
+<li>Session:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70876">#70876</a> (Segmentation fault when regenerating session id with strict mode).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70529">#70529</a> (Session read causes "String is not zero-terminated" error).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70013">#70013</a> (Reference to $_SESSION is lost after a call to session_regenerate_id()).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69952">#69952</a> (Data integrity issues accessing superglobals by reference).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/67694">#67694</a> (Regression in session_regenerate_id()).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/68941">#68941</a> (mod_files.sh is a bash-script).</li>
+</ul></li>
+<li>SOAP:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70940">#70940</a> (Segfault in soap / type_to_string).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70900">#70900</a> (SoapClient systematic out of memory error).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70875">#70875</a> (Segmentation fault if wsdl has no targetNamespace attribute).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70715">#70715</a> (Segmentation fault inside soap client).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70709">#70709</a> (SOAP Client generates Segfault).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70388">#70388</a> (SOAP serialize_function_call() type confusion / RCE).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70081">#70081</a> (SoapClient info leak / null pointer dereference via multiple type confusions).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70079">#70079</a> (Segmentation fault after more than 100 SoapClient calls).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70032">#70032</a> (make_http_soap_request calls zend_hash_get_current_key_ex(,,,NULL).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/68361">#68361</a> (Segmentation fault on SoapClient::__getTypes).</li>
+</ul></li>
+<li>SPL:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70959">#70959</a> (ArrayObject unserialize does not restore protected fields).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70853">#70853</a> (SplFixedArray throws exception when using ref variable as index).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70868">#70868</a> (PCRE JIT and pattern reuse segfault).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70730">#70730</a> (Incorrect ArrayObject serialization if unset is called in serialize()).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70573">#70573</a> (Cloning SplPriorityQueue leads to memory leaks).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70303">#70303</a> (Incorrect constructor reflection for ArrayObject).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70068">#70068</a> (Dangling pointer in the unserialization of ArrayObject items).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70166">#70166</a> (Use After Free Vulnerability in unserialize() with SPLArrayObject).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70168">#70168</a> (Use After Free Vulnerability in unserialize() with SplObjectStorage).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70169">#70169</a> (Use After Free Vulnerability in unserialize() with SplDoublyLinkedList).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70053">#70053</a> (MutlitpleIterator array-keys incompatible change in PHP 7).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69970">#69970</a> (Use-after-free vulnerability in spl_recursive_it_move_forward_ex()).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69845">#69845</a> (ArrayObject with ARRAY_AS_PROPS broken).</li>
+  <li>Changed ArrayIterator implementation using zend_hash_iterator_... API. Allowed modification of iterated ArrayObject using the same behavior as proposed in `Fix "foreach" behavior`. Removed "Array was modified outside object and internal position is no longer valid" hack.</li>
+  <li>Implemented FR <a href="http://bugs.php.net/67886">#67886</a> (SplPriorityQueue/SplHeap doesn't expose extractFlags nor curruption state).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/66405">#66405</a> (RecursiveDirectoryIterator::CURRENT_AS_PATHNAME breaks the RecursiveIterator).</li>
+</ul></li>
+<li>SQLite3:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70571">#70571</a> (Memory leak in sqlite3_do_callback).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69972">#69972</a> (Use-after-free vulnerability in sqlite3SafetyCheckSickOrOk()).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69897">#69897</a> (segfault when manually constructing SQLite3Result).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/68260">#68260</a> (SQLite3Result::fetchArray declares wrong required_num_args).</li>
+</ul></li>
+<li>Standard:
+<ul>
+  <li>Fixed count on symbol tables.</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70963">#70963</a> (Unserialize shows UNKNOWN in result).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70910">#70910</a> (extract() breaks variable references).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70808">#70808</a> (array_merge_recursive corrupts memory of unset items).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70667">#70667</a> (strtr() causes invalid writes and a crashes).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70668">#70668</a> (array_keys() doesn't respect references when $strict is true).</li>
+  <li>Implemented the RFC `Random Functions Throwing Exceptions in PHP 7`.</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70487">#70487</a> (pack('x') produces an error).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70342">#70342</a> (changing configuration with ignore_user_abort(true) isn't working).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70295">#70295</a> (Segmentation fault with setrawcookie).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/67131">#67131</a> (setcookie() conditional for empty values not met).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70365">#70365</a> (Use-after-free vulnerability in unserialize() with SplObjectStorage).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70366">#70366</a> (Use-after-free vulnerability in unserialize() with SplDoublyLinkedList).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70250">#70250</a> (extract() turns array elements to references).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70211">#70211</a> (php 7 ZEND_HASH_IF_FULL_DO_RESIZE use after free).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70208">#70208</a> (Assert breaking access on objects).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70140">#70140</a> (str_ireplace/php_string_tolower - Arbitrary Code Execution).</li>
+  <li>Implemented FR <a href="http://bugs.php.net/70112">#70112</a> (Allow "dirname" to go up various times).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/36365">#36365</a> (scandir duplicates file name at every 65535th file).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70096">#70096</a> (Repeated iptcembed() adds superfluous FF bytes).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70018">#70018</a> (exec does not strip all whitespace).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69983">#69983</a> (get_browser fails with user agent of null).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69976">#69976</a> (Unable to parse "all" urls with colon char).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69768">#69768</a> (escapeshell*() doesn't cater to !).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/62922">#62922</a> (Truncating entire string should result in string).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69723">#69723</a> (Passing parameters by reference and array_column).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69523">#69523</a> (Cookie name cannot be empty).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69325">#69325</a> (php_copy_file_ex does not pass the argument).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69299">#69299</a> (Regression in array_filter's $flag argument in PHP 7).</li>
+  <li>Removed call_user_method() and call_user_method_array() functions.</li>
+  <li>Fixed user session handlers (See rfc:session.user.return-value).</li>
+  <li>Added intdiv() function.</li>
+  <li>Improved precision of log() function for base 2 and 10.</li>
+  <li>Remove string category support in setlocale().</li>
+  <li>Remove set_magic_quotes_runtime() and its alias magic_quotes_runtime().</li>
+  <li>Fixed bug <a href="http://bugs.php.net/65272">#65272</a> (flock() out parameter not set correctly in windows).</li>
+  <li>Added preg_replace_callback_array function.</li>
+  <li>Deprecated salt option to password_hash.</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69686">#69686</a> (password_verify reports back error on PHP7 will null string).</li>
+  <li>Added Windows support for getrusage().</li>
+  <li>Removed hardcoded limit on number of pipes in proc_open().</li>
+</ul></li>
+<li>Streams:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70361">#70361</a> (HTTP stream wrapper doesn't close keep-alive connections).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/68532">#68532</a> (convert.base64-encode omits padding bytes).</li>
+  <li>Removed set_socket_blocking() in favor of its alias stream_set_blocking().</li>
+</ul></li>
+<li>Tokenizer:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/69430">#69430</a> (token_get_all has new irrecoverable errors).</li>
+</ul></li>
+<li>XMLReader:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70309">#70309</a> (XmlReader read generates extra output).</li>
+</ul></li>
+<li>XMLRPC:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70526">#70526</a> (xmlrpc_set_type returns false on success).</li>
+</ul></li>
+<li>XSL:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70678">#70678</a> (PHP7 returns true when false is expected).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70535">#70535</a> (XSLT: free(): invalid pointer).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/69782">#69782</a> (NULL pointer dereference).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/64776">#64776</a> (The XSLT extension is not thread safe).</li>
+  <li>Removed xsl.security_prefs ini option.</li>
+</ul></li>
+<li>Zlib:
+<ul>
+  <li>Added deflate_init(), deflate_add(), inflate_init(), inflate_add() functions allowing incremental/streaming compression/decompression.</li>
+</ul></li>
+<li>Zip:
+<ul>
+  <li>Fixed bug <a href="http://bugs.php.net/70322">#70322</a> (ZipArchive::close() doesn't indicate errors).</li>
+  <li>Fixed bug <a href="http://bugs.php.net/70350">#70350</a> (ZipArchive::extractTo allows for directory traversal when creating directories). (CVE-2014-9767)</li>
+  <li>Added ZipArchive::setCompressionName and ZipArchive::setCompressionIndex methods.</li>
+  <li>Update bundled libzip to 1.0.1.</li>
+  <li>Fixed bug <a href="http://bugs.php.net/67161">#67161</a> (ZipArchive::getStream() returns NULL for certain file).</li>
+</ul></li>
+</ul>
+<!-- }}} --></section>
+
+    </section><!-- layout-content -->
+    
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="/copyright.php">Copyright &copy; 2001-2016 The PHP Group</a></li>
+        <li><a href="/my.php">My PHP.net</a></li>
+        <li><a href="/contact.php">Contact</a></li>
+        <li><a href="/sites.php">Other PHP.net sites</a></li>
+        <li><a href="/mirrors.php">Mirror sites</a></li>
+        <li><a href="/privacy.php">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://php.net/cached.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="https://php.net/cached.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="https://php.net/cached.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="https://php.net/cached.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="https://php.net/cached.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="https://php.net/cached.php?t=1435099203&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="/images/to-top@2x.png"></a>
+
+</body>
+</html>
+
