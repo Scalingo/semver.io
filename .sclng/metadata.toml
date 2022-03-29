@@ -1,0 +1,8 @@
+dependencies = []
+description = "Service crawling different websites/endpoints to return what are the last available versions for some tools/language runtimes"
+destination_server = ["scalingo-platform"]
+flags = ["scalingo-app"]
+languages = ["javascript"]
+owner = "leo@scalingo.com"
+team = "IST"
+version = "1.0.2"
