@@ -791,9 +791,10 @@ map-stream@~0.0.3:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/map-stream/-/map-stream-0.0.6.tgz#d2ef4eb811a28644c7a8989985c69c2fdd496827"
 
-marked@0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.2.tgz#015db158864438f24a64bdd61a0428b418706d09"
+marked@^4.0.12:
+  version "4.0.14"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-4.0.14.tgz#7a3a5fa5c80580bac78c1ed2e3b84d7bd6fc3870"
+  integrity sha512-HL5sSPE/LP6U9qKgngIIPTthuxC0jrfxpYMZ3LdGDD3vTnLs59m2Z7r6+LNDR3ToqEQdkKd6YaaEfJhodJmijQ==
 
 media-typer@0.3.0:
   version "0.3.0"
