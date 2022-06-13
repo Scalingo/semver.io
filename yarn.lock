@@ -55,12 +55,6 @@ assert-plus@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/assert-plus/-/assert-plus-0.2.0.tgz#d74e1b87e7affc0db8aadb7021f3fe48101ab234"
 
-async-listener@^0.6.0:
-  version "0.6.3"
-  resolved "https://registry.yarnpkg.com/async-listener/-/async-listener-0.6.3.tgz#1f6521501b9d1c4e6c7a13d404f756b0900371b8"
-  dependencies:
-    shimmer "1.0.0"
-
 async@~0.9.0:
   version "0.9.2"
   resolved "https://registry.yarnpkg.com/async/-/async-0.9.2.tgz#aea74d5e61c1f899613bf64bda66d4c78f2fd17d"
@@ -204,13 +198,6 @@ content-disposition@0.5.0:
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/content-disposition/-/content-disposition-0.5.0.tgz#4284fe6ae0630874639e44e80a418c2934135e9e"
 
-continuation-local-storage@^3.1.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/continuation-local-storage/-/continuation-local-storage-3.2.0.tgz#e19fc36b597090a5d4e4a3b2ea3ebc5e29694a24"
-  dependencies:
-    async-listener "^0.6.0"
-    emitter-listener "^1.0.1"
-
 cookie-signature@1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/cookie-signature/-/cookie-signature-1.0.5.tgz#a122e3f1503eca0f5355795b0711bb2368d450f9"
@@ -314,12 +301,6 @@ ecc-jsbn@~0.1.1:
 ee-first@1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.0.tgz#6a0d7c6221e490feefd92ec3f441c9ce8cd097f4"
-
-emitter-listener@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/emitter-listener/-/emitter-listener-1.0.1.tgz#b2499ea6e58230a52c268d5df261eecd9f10fe97"
-  dependencies:
-    shimmer "1.0.0"
 
 errs@^0.3.2:
   version "0.3.2"
@@ -643,7 +624,7 @@ json-stable-stringify@^1.0.1:
   dependencies:
     jsonify "~0.0.0"
 
-json-stringify-safe@^5.0.0, json-stringify-safe@~5.0.0, json-stringify-safe@~5.0.1:
+json-stringify-safe@~5.0.0, json-stringify-safe@~5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
 
@@ -921,15 +902,6 @@ negotiator@0.4.9:
   version "0.4.9"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.4.9.tgz#92e46b6db53c7e421ed64a2bc94f08be7630df3f"
 
-newrelic@1.14.1:
-  version "1.14.1"
-  resolved "https://registry.yarnpkg.com/newrelic/-/newrelic-1.14.1.tgz#5d5dae320fae9b0d856d92269df255f8d226b5d3"
-  dependencies:
-    continuation-local-storage "^3.1.0"
-    json-stringify-safe "^5.0.0"
-    proxying-agent "^0.1.6"
-    yakaa "^1.0.0"
-
 node-uuid@~1.4.0:
   version "1.4.7"
   resolved "https://registry.yarnpkg.com/node-uuid/-/node-uuid-1.4.7.tgz#6da5a17668c4b3dd59623bda11cf7fa4c1f60a6f"
@@ -992,10 +964,6 @@ proxy-addr@~1.0.3:
   dependencies:
     forwarded "~0.1.0"
     ipaddr.js "1.0.5"
-
-proxying-agent@^0.1.6:
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/proxying-agent/-/proxying-agent-0.1.8.tgz#3063405dc1d6edb7f8b82c8a6932750b15c6c5d6"
 
 punycode@^1.4.1:
   version "1.4.1"
@@ -1176,10 +1144,6 @@ serve-static@~1.7.1:
     parseurl "~1.3.0"
     send "0.10.1"
     utils-merge "1.0.0"
-
-shimmer@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/shimmer/-/shimmer-1.0.0.tgz#49c2d71c678360b802be18b278382d1cbb805c39"
 
 sigmund@~1.0.0:
   version "1.0.1"
@@ -1367,7 +1331,3 @@ verror@1.3.6:
 xtend@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.1.tgz#a5c6d532be656e23db820efb943a1f04998d63af"
-
-yakaa@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/yakaa/-/yakaa-1.0.1.tgz#3ecaae72f3d089da58089403126204cec772e60a"
