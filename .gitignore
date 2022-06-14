@@ -1,4 +1,9 @@
 node_modules
 cache/*
 npm-debug.log
+yarn-error.log
 .DS_Store
+
+# IDE
+.idea/
+.vscode/

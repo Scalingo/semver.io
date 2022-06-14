@@ -6,31 +6,30 @@
   "dependencies": {
     "array-sugar": "1.0.0",
     "body-parser": "1.9.2",
-    "coffee-script": "1.8.0",
+    "coffeescript": "1.8.0",
     "cors": "2.5.2",
-    "express": "4.10.1",
+    "express": "4.18.1",
+    "highlight.js": "^11.5.1",
     "lodash": "3.10.1",
     "logfmt": "1.2.0",
-    "marked": "^4.0.12",
-    "newrelic": "1.14.1",
+    "marked": "^4.0.17",
     "npm-stats": "1.2.0",
-    "pygmentize-bundled": "2.3.0",
     "semver": "5.0.1",
-    "superagent": "3.8.3"
+    "superagent": "5.3.1"
   },
   "engines": {
     "node": "16.x"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/semver.io"
+    "url": "https://github.com/Scalingo/semver.io"
   },
   "devDependencies": {
     "mocha": "2.5.3",
     "supertest": "1.1.0"
   },
   "scripts": {
-    "start": "node index.js",
+    "start": "node --trace-deprecation index.js",
     "test": "NODE_ENV=test mocha -b --compilers coffee:coffee-script/register --reporter spec --ui tdd $(find test -name '*.test.coffee')"
   },
   "keywords": [

@@ -1,50 +1,49 @@
-# semver.io
+# semver.scalingo.com
 
-semver.io is a plaintext and JSON webservice
-that tracks all available versions of
-[node.js](/node/versions),
-[iojs](/iojs/versions),
-[npm](/npm/versions),
-[yarn](/yarn/versions),
-[nginx](/nginx/versions),
-[mongodb](/mongodb/versions),
-and [PHP](/php/versions).
+semver.scalingo.com is a plaintext and JSON webservice that tracks all available versions of:
+- [iojs](/iojs/versions)
+- [mongodb](/mongodb/versions)
+- [nginx](/nginx/versions)
+- [node.js](/node/versions)
+- [npm](/npm/versions)
+- [php](/php/versions)
+- [python](/python/versions)
+- [redis](/redis/versions)
+- [ruby](/ruby/versions)
+- [yarn](/yarn/versions)
+
+It also supports Scalingo Stacks for `nginx`, `php` and `composer`:
+- [nginx-scalingo-18](/nginx-scalingo-18/versions)
+- [nginx-scalingo-20](/nginx-scalingo-20/versions)
+- [php-scalingo-18](/php-scalingo-18/versions)
+- [php-scalingo-20](/php-scalingo-20/versions)
+- [composer-scalingo-18](/composer-scalingo-18/versions)
+- [composer-scalingo-20](/composer-scalingo-20/versions)
+
 It uses that version info to resolve
-[semver range queries](https://npmjs.org/doc/misc/semver.html#Ranges).
-It's used by Heroku's
-[node buildpack](https://github.com/heroku/heroku-buildpack-nodejs/blob/5754e60de7b8472d5070c9b713a898d353845c68/bin/compile#L18-22)
-and is open-sourced [on GitHub](https://github.com/heroku/semver.io).
+[semver range queries](https://docs.npmjs.com/about-semantic-versioning).
 
-## Other sources
+This project if a fork of [github.com/heroku/semver.io](https://github.com/heroku/semver.io).
 
-Semver.io uses a simple and short module system to pull version data from a variety of sources.
-Pull requests are welcome!
-You can start with one of the current implementations as a template:
-
-- [node module](https://github.com/heroku/semver.io/blob/master/lib/sources/node.js)
-- [iojs module](https://github.com/heroku/semver.io/blob/master/lib/sources/iojs.js)
-- [npm module](https://github.com/heroku/semver.io/blob/master/lib/sources/npm.js)
-- [yarn module](https://github.com/heroku/semver.io/blob/master/lib/sources/yarn.js)
-- [nginx module](https://github.com/heroku/semver.io/blob/master/lib/sources/nginx.js)
-- [mongodb module](https://github.com/heroku/semver.io/blob/master/lib/sources/mongodb.js)
+Scalingo Semver uses a simple and short module system to pull version data from
+a variety of sources. Pull requests are welcome!
 
 ## Usage
 
 ### Command-line
 
-```sh
-curl https://semver.io/node/stable
+```shell
+curl https://semver.scalingo.com/node/stable
 0.10.33
 
-curl https://semver.io/node/unstable
+curl https://semver.scalingo.com/node/unstable
 0.11.14
 
-curl https://semver.io/node/resolve/0.8.x
+curl https://semver.scalingo.com/node/resolve/0.8.x
 0.8.28
 
-curl https://semver.io/nginx/stable
+curl https://semver.scalingo.com/nginx/stable
 1.6.2
-
 ```
 
 ### In the browser
@@ -52,13 +51,13 @@ curl https://semver.io/nginx/stable
 There are CORS-friendly HTTP endpoints for each source
 with the whole kit and caboodle:
 
-- [semver.scalingo.io/node.json](https://semver.scalingo.io/node.json)
-- [semver.scalingo.io/iojs.json](https://semver.scalingo.io/iojs.json)
-- [semver.scalingo.io/npm.json](https://semver.scalingo.io/npm.json)
-- [semver.scalingo.io/yarn.json](https://semver.scalingo.io/yarn.json)
-- [semver.scalingo.io/nginx.json](https://semver.scalingo.io/nginx.json)
-- [semver.scalingo.io/mongodb.json](https://semver.scalingo.io/mongodb.json)
-- [semver.scalingo.io/php.json](https://semver.scalingo.io/php.json)
+- [semver.scalingo.com/node.json](https://semver.scalingo.io/node.json)
+- [semver.scalingo.com/iojs.json](https://semver.scalingo.io/iojs.json)
+- [semver.scalingo.com/npm.json](https://semver.scalingo.io/npm.json)
+- [semver.scalingo.com/yarn.json](https://semver.scalingo.io/yarn.json)
+- [semver.scalingo.com/nginx.json](https://semver.scalingo.io/nginx.json)
+- [semver.scalingo.com/mongodb.json](https://semver.scalingo.io/mongodb.json)
+- [semver.scalingo.com/php.json](https://semver.scalingo.io/php.json)
 
 The response is something like:
 
@@ -76,14 +75,15 @@ The response is something like:
 
 ## Ranges
 
-semver.io supports any range that [node-semver](https://github.com/isaacs/node-semver) can parse.
+semver.scalingo.com supports any range that [node-semver](https://github.com/npm/node-semver) can parse.
+
 For example:
 
-- [/node/resolve/0.10.x](https://semver.scalingo.io/node/resolve/0.10.x)
-- [/node/resolve/>=0.11.5](https://semver.scalingo.io/node/resolve/>=0.11.5)
-- [/node/resolve/~0.10.15](https://semver.scalingo.io/node/resolve/~0.10.15)
-- [/node/resolve/>0.4](https://semver.scalingo.io/node/resolve/>0.4)
-- [/node/resolve/>=0.8.5 <=0.8.14](https://semver.scalingo.io/node/resolve/>=0.8.5 <=0.8.14)
+- [/node/resolve/0.10.x](https://semver.scalingo.com/node/resolve/0.10.x)
+- [/node/resolve/>=0.11.5](https://semver.scalingo.com/node/resolve/>=0.11.5)
+- [/node/resolve/~0.10.15](https://semver.scalingo.com/node/resolve/~0.10.15)
+- [/node/resolve/>0.4](https://semver.scalingo.com/node/resolve/>0.4)
+- [/node/resolve/>=0.8.5 <=0.8.14](https://semver.scalingo.com/node/resolve/>=0.8.5%20<=0.8.14)
 
 These named routes are also provided for convenience (for each source):
 
@@ -94,9 +94,20 @@ These named routes are also provided for convenience (for each source):
 
 ## Links
 
-- [semver.org](http://semver.org)
-- [github.com/heroku/heroku-buildpack-nodejs](https://github.com/heroku/heroku-buildpack-nodejs#readme)
-- [github.com/heroku/semver.io](https://github.com/heroku/semver.io#readme)
-- [github.com/isaacs/node-semver](https://github.com/isaacs/node-semver#readme)
-- [npmjs.org/doc/misc/semver.html#Ranges](https://npmjs.org/doc/misc/semver.html#Ranges)
-- [npmjs.org/package/node-version-resolver](https://npmjs.org/package/node-version-resolver)
+- [Original repository](https://github.com/heroku/semver.io)
+- [Semantic Versioning Specifications](https://semver.org)
+- [NPM documentation about Semantic Versioning](https://docs.npmjs.com/about-semantic-versioning)
+
+## Development Environment
+
+### Install project dependencies
+
+```shell
+docker-compose run --rm web yarn install
+```
+
+### Run the service
+
+```shell
+docker-compose up
+```
