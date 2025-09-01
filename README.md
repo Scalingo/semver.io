@@ -103,11 +103,11 @@ These named routes are also provided for convenience (for each source):
 ### Install project dependencies
 
 ```shell
-docker-compose run --rm web yarn install
+docker compose run --rm web yarn install
 ```
 
 ### Run the service
 
 ```shell
-docker-compose up
+docker compose up
 ```
