@@ -13,12 +13,9 @@ semver.scalingo.com is a plaintext and JSON webservice that tracks all available
 - [yarn](/yarn/versions)
 
 It also supports Scalingo Stacks for `nginx`, `php` and `composer`:
-- [nginx-scalingo-18](/nginx-scalingo-18/versions)
-- [nginx-scalingo-20](/nginx-scalingo-20/versions)
-- [php-scalingo-18](/php-scalingo-18/versions)
-- [php-scalingo-20](/php-scalingo-20/versions)
-- [composer-scalingo-18](/composer-scalingo-18/versions)
-- [composer-scalingo-20](/composer-scalingo-20/versions)
+- Nginx: `/nginx-${stack}/versions`
+- PHP: `/php-${stack}/versions`
+- Composer: `/composer-${stack}/versions`
 
 It uses that version info to resolve
 [semver range queries](https://docs.npmjs.com/about-semantic-versioning).
