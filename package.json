@@ -6,7 +6,6 @@
   "dependencies": {
     "array-sugar": "1.0.0",
     "body-parser": "^1.20.3",
-    "coffeescript": "1.8.0",
     "cors": "2.5.2",
     "express": "^4.21.2",
     "highlight.js": "^11.5.1",
@@ -25,12 +24,13 @@
     "url": "https://github.com/Scalingo/semver.io"
   },
   "devDependencies": {
+    "coffeescript": "^2.7.0",
     "mocha": "^11.7.2",
     "supertest": "^7.1.4"
   },
   "scripts": {
     "start": "node --trace-deprecation index.js",
-    "test": "NODE_ENV=test mocha -b --compilers coffee:coffee-script/register --reporter spec --ui tdd $(find test -name '*.test.coffee')"
+    "test": "NODE_ENV=test mocha --reporter spec -b --require coffeescript/register 'test/**/*.coffee'"
   },
   "keywords": [
     "semver",
