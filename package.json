@@ -10,7 +10,7 @@
     "cors": "2.5.2",
     "express": "4.18.1",
     "highlight.js": "^11.5.1",
-    "lodash": "3.10.1",
+    "lodash": "^4.17.12",
     "logfmt": "1.2.0",
     "marked": "^4.0.17",
     "npm-stats": "1.2.0",
