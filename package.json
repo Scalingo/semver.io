@@ -1,37 +1,36 @@
 {
   "name": "semver.io",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "description": "a plaintext webservice that resolves semver ranges",
   "main": "index.js",
   "dependencies": {
     "array-sugar": "1.0.0",
-    "body-parser": "1.9.2",
-    "coffeescript": "1.8.0",
+    "body-parser": "^1.20.3",
     "cors": "2.5.2",
-    "express": "4.18.1",
+    "express": "^4.21.2",
     "highlight.js": "^11.5.1",
-    "lodash": "^4.17.12",
-    "logfmt": "1.2.0",
+    "lodash": "^4.17.21",
+    "logfmt": "^1.4.0",
     "marked": "^4.0.17",
-    "npm-stats": "1.2.0",
-    "semver": "5.0.1",
+    "semver": "^5.7.2",
     "superagent": "5.3.1",
     "toml": "3.0.0"
   },
   "engines": {
-    "node": "16.x"
+    "node": "20.x"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/Scalingo/semver.io"
   },
   "devDependencies": {
-    "mocha": "2.5.3",
-    "supertest": "1.1.0"
+    "coffeescript": "^2.7.0",
+    "mocha": "^11.7.2",
+    "supertest": "^7.1.4"
   },
   "scripts": {
     "start": "node --trace-deprecation index.js",
-    "test": "NODE_ENV=test mocha -b --compilers coffee:coffee-script/register --reporter spec --ui tdd $(find test -name '*.test.coffee')"
+    "test": "NODE_ENV=test mocha --reporter spec -b --require coffeescript/register 'test/**/*.coffee'"
   },
   "keywords": [
     "semver",
