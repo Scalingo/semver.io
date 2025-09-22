@@ -1,16 +1,10 @@
 # semver.scalingo.com
 
 semver.scalingo.com is a plaintext and JSON webservice that tracks all available versions of:
-- [iojs](/iojs/versions)
-- [mongodb](/mongodb/versions)
 - [nginx](/nginx/versions)
-- [node.js](/node/versions)
-- [npm](/npm/versions)
 - [php](/php/versions)
 - [python](/python/versions)
-- [redis](/redis/versions)
 - [ruby](/ruby/versions)
-- [yarn](/yarn/versions)
 
 It also supports Scalingo Stacks for `nginx`, `php` and `composer`:
 - Nginx: `/nginx-${stack}/versions`
@@ -48,12 +42,7 @@ curl https://semver.scalingo.com/nginx/stable
 There are CORS-friendly HTTP endpoints for each source
 with the whole kit and caboodle:
 
-- [semver.scalingo.com/node.json](https://semver.scalingo.io/node.json)
-- [semver.scalingo.com/iojs.json](https://semver.scalingo.io/iojs.json)
-- [semver.scalingo.com/npm.json](https://semver.scalingo.io/npm.json)
-- [semver.scalingo.com/yarn.json](https://semver.scalingo.io/yarn.json)
 - [semver.scalingo.com/nginx.json](https://semver.scalingo.io/nginx.json)
-- [semver.scalingo.com/mongodb.json](https://semver.scalingo.io/mongodb.json)
 - [semver.scalingo.com/php.json](https://semver.scalingo.io/php.json)
 
 The response is something like:
@@ -76,18 +65,15 @@ semver.scalingo.com supports any range that [node-semver](https://github.com/npm
 
 For example:
 
-- [/node/resolve/0.10.x](https://semver.scalingo.com/node/resolve/0.10.x)
-- [/node/resolve/>=0.11.5](https://semver.scalingo.com/node/resolve/>=0.11.5)
-- [/node/resolve/~0.10.15](https://semver.scalingo.com/node/resolve/~0.10.15)
-- [/node/resolve/>0.4](https://semver.scalingo.com/node/resolve/>0.4)
-- [/node/resolve/>=0.8.5 <=0.8.14](https://semver.scalingo.com/node/resolve/>=0.8.5%20<=0.8.14)
+- [/php-scalingo-22/resolve/8.4.x](https://semver.scalingo.com/php-scalingo-22/resolve/8.4.x)
+- [/php-scalingo-22/resolve/>=8.4.2](https://semver.scalingo.com/php-scalingo-22/resolve/>=8.4.2)
+- [/php-scalingo-22/resolve/~8.4.2](https://semver.scalingo.com/php-scalingo-22/resolve/~8.4.2)
+- [/php-scalingo-22/resolve/>=8.2.0 <8.3](https://semver.scalingo.com/php-scalingo-22/resolve/>=8.2.0%20<8.3)
 
 These named routes are also provided for convenience (for each source):
 
-- [/node/stable](/node/stable)
-- [/nginx/unstable](/nginx/unstable)
-- [/node/versions](/node/versions)
-- [/mongodb/stable](/mongodb/stable)
+- [/nginx/unstable](https://semver.scalingo.com/nginx/unstable)
+- [/php-scalingo-22/versions](https://semver.scalingo.com/php-scalingo-22/versions)
 
 ## Links
 
@@ -100,7 +86,7 @@ These named routes are also provided for convenience (for each source):
 ### Install project dependencies
 
 ```shell
-docker compose run --rm web yarn install
+docker compose run --rm web npm install
 ```
 
 ### Run the service
