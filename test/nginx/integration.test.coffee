@@ -16,25 +16,28 @@ failingApp = new App({
 
 describe "Nginx Routes", ->
   describe "Initialization", ->
-    it "updates the app", ->
+    it "updates the app", (done) ->
       this.timeout(20000)
       app.resolvers.nginx.update (err, updated) ->
         assert(!err)
         assert(updated)
+        done()
 
 
-    it "prime's the failing app's cache", ->
+    it "prime's the failing app's cache", (done) ->
       this.timeout(20000)
       failingApp.resolvers.nginx.update (err, updated) ->
         assert(!err)
         assert(updated)
+        done()
 
-    it "redirects the failing app to a false endpoint", ->
+    it "redirects the failing app to a false endpoint", (done) ->
       this.timeout(20000)
       failingApp.resolvers.nginx.source.url = 'http://nginx.org/fail';
       failingApp.resolvers.nginx.update (err, updated) ->
         assert(err)
         assert(!updated)
+        done()
 
   describe "GET /nginx/stable", ->
     it "returns a stable nginx version", ->
@@ -55,7 +58,7 @@ describe "Nginx Routes", ->
         .expect('Content-Type', /text\/plain/)
         .then (res) ->
           assert semver.valid(res.text)
-          assert.equal semver.parse(res.text).minor%2, 1
+          assert.equal res.text, app.resolvers.nginx.getLatest()
 
 
   describe "GET /nginx/resolve/1.6.x", ->
@@ -96,7 +99,6 @@ describe "Nginx Routes", ->
         .expect(200)
         .expect('Content-Type', /text\/plain/)
         .then (res) ->
-          return if err
           assert.equal semver.parse(res.text).minor, 8
 
   describe "GET /nginx.json", ->
@@ -110,4 +112,3 @@ describe "Nginx Routes", ->
           assert 'stable' in keys
           assert 'unstable' in keys
           assert 'all' in keys
-
