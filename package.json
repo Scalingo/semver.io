@@ -4,20 +4,20 @@
   "description": "a plaintext webservice that resolves semver ranges",
   "main": "index.js",
   "dependencies": {
-    "array-sugar": "1.0.0",
-    "body-parser": "^1.20.3",
-    "cors": "2.5.2",
-    "express": "^4.21.2",
-    "highlight.js": "^11.5.1",
+    "array-sugar": "^1.2.2",
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.6",
+    "express": "^4.22.1",
+    "highlight.js": "^11.11.1",
     "lodash": "^4.17.21",
     "logfmt": "^1.4.0",
-    "marked": "^4.0.17",
-    "semver": "^5.7.2",
-    "superagent": "5.3.1",
-    "toml": "3.0.0"
+    "marked": "^4.3.0",
+    "semver": "^7.8.0",
+    "superagent": "^10.3.0",
+    "toml": "^4.1.1"
   },
   "engines": {
-    "node": "20.x"
+    "node": "24.x"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,7 @@
   "devDependencies": {
     "coffeescript": "^2.7.0",
     "mocha": "^11.7.2",
-    "supertest": "^7.1.4"
+    "supertest": "^7.2.2"
   },
   "scripts": {
     "start": "node --trace-deprecation index.js",

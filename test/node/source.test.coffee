@@ -1,11 +1,22 @@
 process.env.NODE_ENV = 'test'
 
 assert = require "assert"
-semver = require "semver"
-fs = require "fs"
 
 Source = require "../../lib/sources/node"
-html = fs.readFileSync(__dirname + '/../fixtures/node.html').toString();
+
+inventory = """
+[[artifacts]]
+version = "0.10.29"
+
+[[artifacts]]
+version = "0.11.12"
+
+[[artifacts]]
+version = "4.0.0"
+
+[[artifacts]]
+version = "4.0.0-rc.1"
+"""
 
 describe "Node Source", ->
 
@@ -20,8 +31,8 @@ describe "Node Source", ->
     it "default to empty stable array", ->
       assert.equal this.s.stable.length, 0
 
-    it "defaults to the 'https://nodejs.org/dist/' url", ->
-      assert.equal this.s.url, 'https://nodejs.org/dist/'
+    it "defaults to the Scalingo buildpack inventory url", ->
+      assert.equal this.s.url, 'https://raw.githubusercontent.com/Scalingo/nodejs-buildpack/refs/heads/master/inventory/node.toml'
 
     it "has never been updated", ->
       assert.ok !this.s.updated
@@ -30,17 +41,17 @@ describe "Node Source", ->
 
     before ->
       this.s = new Source()
-      this.s._parse(html)
+      this.s._parse(inventory)
 
     it "has an array of all versions", ->
       assert.equal typeof(this.s.all), "object"
-      assert.equal this.s.all.length, 219
-      assert.equal this.s.all[214], '0.11.12'
+      assert.equal this.s.all.length, 4
+      assert.equal this.s.all[1], '0.11.12'
 
     it "has an array of stable versions", ->
       assert.equal typeof(this.s.stable), "object"
-      assert.equal this.s.stable.length, 108
-      assert.equal this.s.stable[105], '0.10.29'
+      assert.equal this.s.stable.length, 2
+      assert.equal this.s.stable[0], '0.10.29'
 
     it "includes v4.0.0 in stable", ->
       assert.ok(this.s.stable.indexOf('4.0.0') != -1)
